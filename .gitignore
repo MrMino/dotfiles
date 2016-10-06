@@ -1,0 +1,10 @@
+gnore everything
+*
+
+# But not these files...
+!*.vimrc
+!*.vim
+!*.bashrc
+!*.zshrc
+!.gitignore
+
