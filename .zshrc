@@ -139,6 +139,3 @@ source /home/MrMino/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.autoenv/activate.sh
 
 alias vim='vimx'
-
-# Vi mode
-bindkey -v
