@@ -10,9 +10,7 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
-Bundle 'Valloric/YouCompleteMe'
 Plugin 'MvanDiemen/brighton.vim'
-Bundle 'jistr/vim-nerdtree-tabs'
 Plugin 'scrooloose/syntastic'
 Plugin 'nvie/vim-flake8'
 Plugin 'scrooloose/nerdtree'
@@ -21,6 +19,10 @@ Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'kien/ctrlp.vim'
 Plugin 'vim-scripts/indentpython.vim'
+Plugin 'chrisbra/Recover.vim'
+Plugin 'AndrewRadev/sideways.vim'
+Bundle 'jistr/vim-nerdtree-tabs'
+Bundle 'Valloric/YouCompleteMe'
 
 
 " Add all your plugins here (note older versions of Vundle used Bundle
@@ -42,7 +44,8 @@ colorscheme brighton
 
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 
-set clipboard=unnamed
+"Set the default clipboard to system-clipboard (requires '+xterm-clipboard')
+set clipboard=unnamedplus
 
 set laststatus=2
 
@@ -87,18 +90,18 @@ let g:ctrlp_working_path_mode = 'rw'
 
 
 au BufNewFile,BufRead *.py
-    \ set tabstop=4 |
-    \ set softtabstop=4 |
-    \ set shiftwidth=4 |
-    \ set textwidth=79 |
-    \ set expandtab |
-    \ set autoindent |
-    \ set fileformat=unix
+	\ set tabstop=4 |
+	\ set softtabstop=4 |
+	\ set shiftwidth=4 |
+	\ set textwidth=79 |
+	\ set expandtab |
+	\ set autoindent |
+	\ set fileformat=unix
 
 au BufNewFile,BufRead *.js, *.html, *.css
-    \ set tabstop=2 |
-    \ set softtabstop=2 |
-    \ set shiftwidth=2
+	\ set tabstop=2 |
+	\ set softtabstop=2 |
+	\ set shiftwidth=2
 
 highlight BadWhitespace ctermbg=red guibg=darkred
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
@@ -110,14 +113,15 @@ set cursorline
 
 " Relative numbers settings: toggling with ctr-n, change on focus, change on
 " mode
+set relativenumber
 function! NumberToggle()
-  if(&relativenumber == 1)
-    set number
-    set norelativenumber
-  else
-    set relativenumber
-    set nonumber
-  endif
+	if(&relativenumber == 1)
+		set number
+		set norelativenumber
+	else
+		set relativenumber
+		set nonumber
+	endif
 endfunc
 
 nnoremap <C-n> :call NumberToggle()<cr>
@@ -141,15 +145,19 @@ inoremap <Down> <NOP>
 
 " Annoyance fixes
 if has("user_commands")
-    command! -bang -nargs=? -complete=file E e<bang> <args>
-    command! -bang -nargs=? -complete=file W w<bang> <args>
-    command! -bang -nargs=? -complete=file Wq wq<bang> <args>
-    command! -bang -nargs=? -complete=file WQ wq<bang> <args>
-    command! -bang Wa wa<bang>
-    command! -bang WA wa<bang>
-    command! -bang Q q<bang>
-    command! -bang QA qa<bang>
-    command! -bang Qa qa<bang>
+	command! -bang -nargs=? -complete=file E e<bang> <args>
+	command! -bang -nargs=? -complete=file W w<bang> <args>
+	command! -bang -nargs=? -complete=file Wq wq<bang> <args>
+	command! -bang -nargs=? -complete=file WQ wq<bang> <args>
+	command! -bang Wa wa<bang>
+	command! -bang WA wa<bang>
+	command! -bang Q q<bang>
+	command! -bang QA qa<bang>
+	command! -bang Qa qa<bang>
 endif
 " The scrolling bullshit
 set scrolloff=10
+
+" Sideways! = and - move arguments (and more) left and right
+nnoremap - :SidewaysLeft<cr>
+nnoremap = :SidewaysRight<cr>
