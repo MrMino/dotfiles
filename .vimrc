@@ -162,3 +162,6 @@ set scrolloff=10
 " Sideways! = and - move arguments (and more) left and right
 nnoremap - :SidewaysLeft<cr>
 nnoremap = :SidewaysRight<cr>
+
+" Escape key timeout
+set timeoutlen=1000 ttimeoutlen=0
