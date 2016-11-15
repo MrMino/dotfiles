@@ -138,4 +138,7 @@ source /home/MrMino/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 #Autoenv
 source ~/.autoenv/activate.sh
 
+#Pygmentized cat
+alias pcat='pygmentize -O style=monokai -f terminal -g'
+
 alias vim='vimx'
