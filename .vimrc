@@ -22,6 +22,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'chrisbra/Recover.vim'
 Plugin 'AndrewRadev/sideways.vim'
+Plugin 'justinmk/vim-syntax-extra'
 Bundle 'jistr/vim-nerdtree-tabs'
 Bundle 'Valloric/YouCompleteMe'
 
