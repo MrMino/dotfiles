@@ -97,7 +97,7 @@ source "/home/mrmino/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 # Usage: somecommand | ctrlc
 alias ctrlc='xclip -selection c'
 
-#Fuzzy finder. Wonder when I'll actually start to use it :|
+# Fuzzy finder initialization.
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 #DISABLED: learning virtualenv, this has to go.
