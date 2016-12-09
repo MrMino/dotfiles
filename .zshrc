@@ -100,7 +100,7 @@ alias ctrlc='xclip -selection c'
 # Fuzzy finder initialization.
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-#initialize Z (https://github.com/rupa/z) 
+# Initialize Z (https://github.com/rupa/z) 
 . ~/bin/z/z.sh 
 
 # Calculator
@@ -115,6 +115,6 @@ alias ctrlc='xclip -selection c'
 # Pygmentized cat
 alias pcat='pygmentize -O style=monokai -f terminal -g'
 
-# Alias vim into extended vim
 # Required on Fedora / RedHat for many features
+# Alias vim into extended vim
 #alias vim='vimx'
