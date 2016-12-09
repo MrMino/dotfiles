@@ -93,8 +93,8 @@ source "/home/mrmino/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 # Add package suggestion feature
 . /etc/zsh_command_not_found
 
-#Add alias for fast piping into 'ctrl+c ctrl+v' clipboard
-#somecommand | ctrlc
+# Add alias for fast piping into 'ctrl+c ctrl+v' clipboard
+# Usage: somecommand | ctrlc
 alias ctrlc='xclip -selection c'
 
 #I need that stack overflow badge and I'm willing to do anyhing to get it!
