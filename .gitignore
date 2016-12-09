@@ -6,6 +6,6 @@
 !*.vim
 !*.bashrc
 !*.zshrc
+!*.tmux.conf
 !.gitignore
-!.tmux.conf
 
