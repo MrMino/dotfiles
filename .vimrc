@@ -73,8 +73,8 @@ set laststatus=2
 set clipboard=unnamedplus
 
 " Escape key timeout
-" Not used because it breaks sequences that use escape in insert mode
 " set esckeys 
+" Not used because it breaks sequences that use escape in insert mode
 " Use this instead
 set timeoutlen=1000 ttimeoutlen=0
 
