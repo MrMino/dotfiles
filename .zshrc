@@ -140,3 +140,9 @@ export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/
 source /usr/local/bin/virtualenvwrapper.sh
+
+# Enhanced cd
+source ~/.enhancd/init.sh
+export ENHANCD_FILTER=fzf
+alias -g ...=...
+export ENHANCD_DOT_ARG=...
