@@ -110,7 +110,7 @@ alias ctrlc='xclip -selection c'
 #initialize Z (https://github.com/rupa/z) 
 . ~/bin/z/z.sh 
 
-#calculator
+# Calculator
 '='(){
     calc="$@"
     # Uncomment the below for (p → +) and (x → *)
