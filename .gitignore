@@ -1,4 +1,4 @@
-gnore everything
+# Ignore everything
 *
 
 # But not these files...
@@ -7,4 +7,5 @@ gnore everything
 !*.bashrc
 !*.zshrc
 !.gitignore
+!.tmux.conf
 

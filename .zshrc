@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/mrmino/.oh-my-zsh
+export ZSH=/home/mrmino/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -49,7 +49,8 @@ HYPHEN_INSENSITIVE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git virtualenv tmux tmuxinator pip)
+# Also used at some point: autoenv zsh-auto-virtualenv virtualenvwrapper 
 
 # User configuration
 
@@ -83,14 +84,6 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-
-#--- ADD BY MRMINO ---
-#Run tmux. Because we can. Finally without "nested sessions care blah blah" msg at start.
-#Make sure that 1) tmux exists 2) doesn't try to nest (for f!@#s sake).
-#if command -v tmux>/dev/null; then
-#  [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
-#fi
-
 #Add desktop directory to cdpath, so no need for one additional cd at start.
 cdpath=("~/Pulpit")
 
@@ -100,8 +93,9 @@ DEFAULT_USER="mrmino"
 #ZSH Syntax highlighting plugin
 source "/home/mrmino/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
-#Add package suggestion feature
-. /etc/zsh_command_not_found
+# Add package suggestion feature
+# Commented out, because proxy
+#. /etc/zsh_command_not_found
 
 #Add my own script directory. For reasons.
 PATH=${PATH}:~/bash_scripts
@@ -130,7 +124,14 @@ alias ctrlc='xclip -selection c'
 '='(){
     calc="$@"
     # Uncomment the below for (p → +) and (x → *)
-    calc="${calc//p/+}"
+    # calc="${calc//p/+}"
     calc="${calc//x/*}"
     echo -e "$calc\nquit"| gcalccmd | sed "s:^> ::g"
 }
+
+# Pygmentized cat
+alias pcat='pygmentize -O style=monokai -f terminal -g'
+
+# Alias vim into extended vim
+# Required on Fedora / RedHat for many features
+#alias vim='vimx'
