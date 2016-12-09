@@ -105,6 +105,7 @@ highlight Pmenu ctermfg=lightgray ctermbg=darkgray guifg=#ffffff guibg=#000000
 " Color by which trailing whitespaces are colored
 highlight BadWhitespace ctermbg=red guibg=darkred
 
+
 """"""""""""""""""""
 """ Line numbers """
 """"""""""""""""""""
