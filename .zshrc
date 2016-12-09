@@ -128,3 +128,9 @@ export LESSOPEN='|pygmentize %s'
 # Better do it before something goes terribly wrong
 # Disable rm 
 alias rm='echo "rm is disabled, use trash or /bin/rm instead."'
+
+# Aliases for easier pip management
+alias spip='sudo -H pip'
+alias upip='pip --user'
+alias spip3='sudo -H pip3'
+alias upip3='pip3 --user'
