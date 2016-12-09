@@ -136,8 +136,9 @@ autocmd InsertLeave * :set relativenumber | set nonumber
 """""""""""""""""""
 """ Keybindings """
 """""""""""""""""""
-" Enable folding with the spacebar
-nnoremap <space> za
+" Leaders
+let mapleader='<space>'
+let maplocalleader='\\'
 
 " Split navigations
 noremap <C-J> <C-W><C-J>
