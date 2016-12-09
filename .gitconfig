@@ -12,7 +12,9 @@
 [alias]
 	d = difftool
 [merge]
-	tool = vimdiff
-	conflictstyle = diff3
+	tool = splice
+[mergetool "splice"]
+	cmd = "mvim -f $BASE $LOCAL $REMOTE $MERGED -c 'SpliceInit'"
+	trustExitCode = true	tool = vimdiff
 [mergetool]
 	prompt = false

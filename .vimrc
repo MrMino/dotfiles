@@ -35,6 +35,7 @@ Plugin 'AndrewRadev/sideways.vim'
 Plugin 'justinmk/vim-syntax-extra'
 Bundle 'jistr/vim-nerdtree-tabs'
 Bundle 'Valloric/YouCompleteMe'
+Plugin 'sjl/splice.vim'
 "
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
