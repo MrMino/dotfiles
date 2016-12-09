@@ -100,13 +100,6 @@ alias ctrlc='xclip -selection c'
 # Fuzzy finder initialization.
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-#DISABLED: learning virtualenv, this has to go.
-#Could it be that it breaks terminal plugin (ctrl+shift+t) in sublime text O_o? -- No.
-#OpenCV is a bitch to install, I tell ya. This is for OpenCV in python3. IHNIWID. 
-# virtualenv and virtualenvwrapper
-#export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-#export WORKON_HOME=$HOME/.virtualenvs
-
 #initialize Z (https://github.com/rupa/z) 
 . ~/bin/z/z.sh 
 
