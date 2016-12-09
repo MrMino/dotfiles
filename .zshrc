@@ -121,3 +121,6 @@ alias pcat='pygmentize -O style=monokai -f terminal -g'
 
 # Add ~/bin to path
 export PATH=$PATH:~/bin
+
+# Always open less with pygmentize
+export LESSOPEN='|pygmentize %s'
