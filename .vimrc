@@ -135,10 +135,6 @@ autocmd InsertLeave * :set relativenumber | set nonumber
 """""""""""""""""""
 """ Keybindings """
 """""""""""""""""""
-" Leaders
-let mapleader='<space>'
-let maplocalleader='\\'
-
 " Split navigations
 noremap <C-J> <C-W><C-J>
 noremap <C-K> <C-W><C-K>
