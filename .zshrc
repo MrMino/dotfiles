@@ -124,3 +124,7 @@ export PATH=$PATH:~/bin
 
 # Always open less with pygmentize
 export LESSOPEN='|pygmentize %s'
+
+# Better do it before something goes terribly wrong
+# Disable rm 
+alias rm='echo "rm is disabled, use trash or /bin/rm instead."'
