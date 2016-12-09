@@ -4,9 +4,9 @@ set encoding=utf-8
 set nocompatible              " required
 filetype off                  " required
 
-""""""""""""""""""""
-""""" Plugins """"""
-""""""""""""""""""""
+"""""""""""""""
+""" Plugins """
+"""""""""""""""
 " Set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
