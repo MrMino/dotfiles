@@ -84,9 +84,6 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-#Add desktop directory to cdpath, so no need for one additional cd at start.
-cdpath=("~/Pulpit")
-
 #Add $DEFAULT_USER, so zsh themes won't clutter up the prompt
 DEFAULT_USER="mrmino"
 
