@@ -91,8 +91,7 @@ DEFAULT_USER="mrmino"
 source "/home/mrmino/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
 # Add package suggestion feature
-# Commented out, because proxy
-#. /etc/zsh_command_not_found
+. /etc/zsh_command_not_found
 
 #Add my own script directory. For reasons.
 PATH=${PATH}:~/bash_scripts
