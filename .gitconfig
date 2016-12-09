@@ -12,6 +12,6 @@
 [alias]
 	d = difftool
 [merge]
-	tool = vimdiff
+	tool = diffconflicts
 [mergetool]
 	prompt = false
