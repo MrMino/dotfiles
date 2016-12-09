@@ -97,9 +97,6 @@ source "/home/mrmino/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 # Usage: somecommand | ctrlc
 alias ctrlc='xclip -selection c'
 
-#I need that stack overflow badge and I'm willing to do anyhing to get it!
-#google-chrome http://stackoverflow.com & echo "Get that badge!"
-
 #Fuzzy finder. Wonder when I'll actually start to use it :|
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
