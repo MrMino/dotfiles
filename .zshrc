@@ -93,9 +93,6 @@ source "/home/mrmino/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 # Add package suggestion feature
 . /etc/zsh_command_not_found
 
-#Add my own script directory. For reasons.
-PATH=${PATH}:~/bash_scripts
-
 #Add alias for fast piping into 'ctrl+c ctrl+v' clipboard
 #somecommand | ctrlc
 alias ctrlc='xclip -selection c'
