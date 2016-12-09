@@ -7,6 +7,6 @@
 !*.bashrc
 !*.zshrc
 !*.tmux.conf
-!bin/*
+!bin/
 !.gitignore
 
