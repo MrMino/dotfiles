@@ -118,3 +118,6 @@ alias pcat='pygmentize -O style=monokai -f terminal -g'
 # Required on Fedora / RedHat for many features
 # Alias vim into extended vim
 #alias vim='vimx'
+
+# Add ~/bin to path
+export PATH=$PATH:~/bin
