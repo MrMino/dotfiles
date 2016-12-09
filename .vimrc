@@ -54,6 +54,9 @@ set foldlevel=99
 " Enable syntax coloring
 syntax on
 
+" Vim aware tmux scrolling
+set mouse=a
+
 " Make YouCompleteMe close documentation automatically
 let g:ycm_autoclose_preview_window_after_completion=1
 
