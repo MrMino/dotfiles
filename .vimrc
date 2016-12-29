@@ -165,6 +165,8 @@ silent! nmap <C-p> :NERDTreeToggle<CR>
 silent! map <F3> :NERDTreeFind<CR>
 silent! map <F2> :NERDTreeToggle<CR>
 
+" Enable folding with the spacebar
+nnoremap <space> za
 
 " YouCompleteMe - go to definition / declaration
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
