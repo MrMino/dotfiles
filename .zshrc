@@ -97,6 +97,11 @@ source "/home/mrmino/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 # Usage: somecommand | ctrlc
 alias ctrlc='xclip -selection c'
 
+# Switch to ls++
+# https://github.com/trapd00r/ls--
+alias ls='ls++'
+alias lsls='/bin/ls --colori=tty'
+
 # Fuzzy finder initialization.
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
