@@ -44,6 +44,11 @@ filetype plugin indent on    " required
 """"""""""""""""""""""
 """ Basic behavior """
 """"""""""""""""""""""
+" Fetch vimrc files from working directory
+set exrc
+" ...but disable some options, so that it is secure to do it
+set secure
+
 " Add horizontal background line to cursor
 set cursorline
 
