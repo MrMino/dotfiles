@@ -17,7 +17,8 @@ call vundle#begin()
 " Let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
-" Add all your plugins here (note older versions of Vundle used Bundle instead of Plugin)
+" Add all your plugins here
+" (note older versions of Vundle used Bundle instead of Plugin)
 "
 Plugin 'JuliaEditorSupport/julia-vim'
 Plugin 'MvanDiemen/brighton.vim'
