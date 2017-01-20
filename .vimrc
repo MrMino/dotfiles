@@ -99,6 +99,11 @@ let g:SimpylFold_docstring_preview=1
 " Selection colors fix
 set background=dark
 
+" Show where the 80th column is
+set colorcolumn=80
+" And do it with using this color
+highlight ColorColumn ctermbg=darkgray
+
 " Better color scheme
 colorscheme brighton
 
