@@ -254,6 +254,8 @@ if has("user_commands")
 	command! -bang Qa qa<bang>
 endif
 
+" Because 'U' keybinding is never useful. 
+:nnoremap U :echo " < < ===== C H E C K   C A P S   L O C K ===== > > "
 
 """""""""""""""""""""
 """ Miscellaneous """
