@@ -238,10 +238,10 @@ let g:NERDTreeChDirMode       = 2
 let g:ctrlp_working_path_mode = 'rw'
 
 
-"""""""""""""""""""""""""""""""""""""""""
-""" Common annoyances with :-commands """
-"""""""""""""""""""""""""""""""""""""""""
-" Annoyance fixes
+"""""""""""""""""""""""""
+""" Common annoyances """
+"""""""""""""""""""""""""
+" ':' commands that annoy
 if has("user_commands")
 	command! -bang -nargs=? -complete=file E e<bang> <args>
 	command! -bang -nargs=? -complete=file W w<bang> <args>
