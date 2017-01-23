@@ -85,15 +85,6 @@ source $ZSH/oh-my-zsh.sh
 
 
 #--- ADD BY MRMINO ---
-#Run tmux. Because we can. Finally without "nested sessions care blah blah" msg at start.
-#Make sure that 1) tmux exists 2) doesn't try to nest (for f!@#s sake).
-if command -v tmux>/dev/null; then
-  [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
-fi
-
-#Add desktop directory to cdpath, so no need for one additional cd at start.
-cdpath=("~/Pulpit")
-
 #Add $DEFAULT_USER, so zsh themes won't clutter up the prompt
 DEFAULT_USER="MrMino"
 
