@@ -43,6 +43,7 @@ colorscheme brighton-modified
 " highlight LineNr ctermFg=238
 
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
+let g:NERDTreeWinPos = "right"
 
 "Set the default clipboard to system-clipboard (requires '+xterm-clipboard')
 set clipboard=unnamedplus
