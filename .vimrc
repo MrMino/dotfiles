@@ -10,7 +10,6 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
-Plugin 'MvanDiemen/brighton.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'nvie/vim-flake8'
@@ -42,7 +41,7 @@ set nu
 let python_highlight_all=1
 syntax on
 
-colorscheme brighton
+colorscheme brighton-modified
 " highlight LineNr ctermFg=238
 
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
