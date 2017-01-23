@@ -4,6 +4,7 @@ gnore everything
 # But not these files...
 !*.vimrc
 !*.vim
+!.vim/*
 !*.bashrc
 !*.zshrc
 !.gitignore
