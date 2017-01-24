@@ -255,7 +255,8 @@ if has("user_commands")
 endif
 
 " Because 'U' keybinding is never useful. 
-:nnoremap U :echohl Error \| echo " <== C H E C K   C A P S   L O C K ==>"<CR>
+:nnoremap U :echohl Error \| echo " <== C H E C K   C A P S   L O C K ==>"<CR>\
+			:echohl Normal
 
 """""""""""""""""""""
 """ Miscellaneous """
