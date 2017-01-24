@@ -86,6 +86,8 @@ source $ZSH/oh-my-zsh.sh
 
 #~~~ZPLUG~~~
 source ~/.zplug/init.zsh
+
+zplug "b4b4r07/enhancd", use:init.sh
 #~~~~~~~~~~~
 
 #Add $DEFAULT_USER, so zsh themes won't clutter up the prompt
@@ -148,7 +150,6 @@ export PROJECT_HOME=$HOME/
 source /usr/local/bin/virtualenvwrapper.sh
 
 # Enhanced cd
-source ~/.enhancd/init.sh
 export ENHANCD_FILTER=fzf
 alias -g ...=...
 export ENHANCD_DOT_ARG=...
