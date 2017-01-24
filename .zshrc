@@ -49,7 +49,7 @@ HYPHEN_INSENSITIVE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git virtualenv tmux tmuxinator pip)
+plugins=(git virtualenv tmux tmuxinator pip zsh-syntax-highlighting)
 # Also used at some point: autoenv zsh-auto-virtualenv virtualenvwrapper 
 
 # User configuration
@@ -86,9 +86,6 @@ source $ZSH/oh-my-zsh.sh
 
 #Add $DEFAULT_USER, so zsh themes won't clutter up the prompt
 DEFAULT_USER="mrmino"
-
-#ZSH Syntax highlighting plugin
-source "/home/mrmino/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
 # Add package suggestion feature
 . /etc/zsh_command_not_found
