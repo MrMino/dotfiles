@@ -8,5 +8,6 @@
 !*.zshrc
 !*.tmux.conf
 !bin/
+!*.gitconfig
 !.gitignore
 
