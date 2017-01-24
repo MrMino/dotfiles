@@ -84,6 +84,10 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+#~~~ZPLUG~~~
+source ~/.zplug/init.zsh
+#~~~~~~~~~~~
+
 #Add $DEFAULT_USER, so zsh themes won't clutter up the prompt
 DEFAULT_USER="mrmino"
 
