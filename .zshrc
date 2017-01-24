@@ -103,7 +103,7 @@ alias lsls='/bin/ls --color=tty'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Initialize Z (https://github.com/rupa/z) 
-. ~/bin/z/z.sh 
+source ~/.z-bin/z.sh 
 
 # Calculator
 '='(){
