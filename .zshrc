@@ -86,8 +86,11 @@ source $ZSH/oh-my-zsh.sh
 
 #~~~ZPLUG~~~
 source ~/.zplug/init.zsh
+zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 
 zplug "b4b4r07/enhancd", use:init.sh
+#-----------
+zplug load 
 #~~~~~~~~~~~
 
 #Add $DEFAULT_USER, so zsh themes won't clutter up the prompt
