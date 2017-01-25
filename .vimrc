@@ -27,7 +27,6 @@ Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'nvie/vim-flake8'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-fugitive'
-Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'kien/ctrlp.vim'
 Plugin 'vim-scripts/indentpython.vim'
@@ -45,6 +44,11 @@ filetype plugin indent on    " required
 """"""""""""""""""""""
 """ Basic behavior """
 """"""""""""""""""""""
+" Powerline for vim (managed by pip)
+python3 from powerline.vim import setup as powerline_setup
+python3 powerline_setup()
+python3 del powerline_setup
+
 " Fetch vimrc files from working directory
 set exrc
 " ...but disable some options, so that it is secure to do it
