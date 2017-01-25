@@ -106,7 +106,7 @@ alias ls='ls++'
 alias lsls='/bin/ls --color=tty'
 
 # Fuzzy finder initialization.
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source ~/.fzf.zsh
 
 # Initialize Z (https://github.com/rupa/z) 
 source ~/.z-bin/z.sh 
