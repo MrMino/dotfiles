@@ -88,7 +88,21 @@ source $ZSH/oh-my-zsh.sh
 source ~/.zplug/init.zsh
 zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 
+zplug "junegunn/fzf-bin", \
+	from:gh-r, \
+	as:command, \
+	rename-to:fzf, \
+	use:"*darwin*amd64*"
 zplug "b4b4r07/enhancd", use:init.sh
+
+
+zplug "plugins/git", from:oh-my-zsh
+zplug "plugins/virtualenv", from:oh-my-zsh
+zplug "plugins/tmux", from:oh-my-zsh
+zplug "plugins/tmuxinator", from:oh-my-zsh
+zplug "plugins/pip", from:oh-my-zsh
+zplug "plugins/zsh-syntax-highlighting", from:oh-my-zsh
+
 #-----------
 zplug load 
 #~~~~~~~~~~~
