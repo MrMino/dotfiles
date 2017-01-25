@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/home/mrmino/.oh-my-zsh
+export ZSH=/home/mrmino/.zplug/repos/robbyrussell/oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -49,7 +49,7 @@ HYPHEN_INSENSITIVE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git virtualenv tmux tmuxinator pip zsh-syntax-highlighting)
+plugins=()
 # Also used at some point: autoenv zsh-auto-virtualenv virtualenvwrapper 
 
 # User configuration
@@ -96,12 +96,13 @@ zplug "junegunn/fzf-bin", \
 zplug "b4b4r07/enhancd", use:init.sh
 
 
-zplug "plugins/git", from:oh-my-zsh
-zplug "plugins/virtualenv", from:oh-my-zsh
-zplug "plugins/tmux", from:oh-my-zsh
-zplug "plugins/tmuxinator", from:oh-my-zsh
-zplug "plugins/pip", from:oh-my-zsh
-zplug "plugins/zsh-syntax-highlighting", from:oh-my-zsh
+zplug "plugins/git", from:oh-my-zsh, as:plugin
+zplug "plugins/virtualenv", from:oh-my-zsh, as:plugin
+zplug "plugins/tmux", from:oh-my-zsh, as:plugin
+zplug "plugins/tmuxinator", from:oh-my-zsh, as:plugin
+zplug "plugins/pip", from:oh-my-zsh, as:plugin
+zplug "zsh-users/zsh-syntax-highlighting", use:zsh-syntax-highlighting.zsh, \
+	as:plugin, defer:3
 
 #-----------
 zplug load 
