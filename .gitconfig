@@ -1,0 +1,17 @@
+[user]
+	email = michalikblazej95@gmail.com
+	name = Błażej Michalik
+[core]
+	editor = vim
+[credential]
+	helper = cache
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false
+[alias]
+	d = difftool
+[merge]
+	tool = diffconflicts
+[mergetool]
+	prompt = false
