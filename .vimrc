@@ -21,7 +21,6 @@ Plugin 'gmarik/Vundle.vim'
 " (note older versions of Vundle used Bundle instead of Plugin)
 "
 Plugin 'JuliaEditorSupport/julia-vim'
-Plugin 'MvanDiemen/brighton.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'nvie/vim-flake8'
@@ -110,7 +109,7 @@ set colorcolumn=80
 highlight ColorColumn ctermbg=darkgray
 
 " Better color scheme
-colorscheme brighton
+colorscheme brighton-modified
 
 " YouCompleteMe completion submenu colors
 highlight Pmenu ctermfg=lightgray ctermbg=darkgray guifg=#ffffff guibg=#000000    
