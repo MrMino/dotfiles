@@ -1,12 +1,13 @@
-gnore everything
+# Ignore everything
 *
 
 # But not these files...
 !*.vimrc
 !*.vim
-!.vim/*
 !*.bashrc
 !*.zshrc
+!*.tmux.conf
+!bin/
+!*.gitconfig
 !.gitignore
-!.tmux.conf
 
