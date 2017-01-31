@@ -186,3 +186,6 @@ exec_always "setxkbmap -option caps:escape"
 
 # Use some gnome settings
 exec gnome-settings-daemon
+
+# Hide border on workspaces with only one window
+hide_edge_borders smart
