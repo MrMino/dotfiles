@@ -163,8 +163,8 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 bindsym XF86TouchpadToggle exec ~/.i3/toggle_touchpad.sh
 
 # Make sure touchpad palm rejection
-exec "xinput set-prop 15 'Synaptics Palm Detection' 1"
-exec "xinput set-prop 15 'Synaptics Palm Dimensions' 5, 5"
+exec_always "xinput set-prop 15 'Synaptics Palm Detection' 1"
+exec_always "xinput set-prop 15 'Synaptics Palm Dimensions' 5, 5"
 
 # Bind lockscreen to super+l
 bindsym Mod4+l exec "~/.i3/i3lock-fancy/lock"
@@ -179,10 +179,10 @@ bar {
 }
 
 # Screen layout
-exec ~/.screenlayout/home_dell.sh
+exec_always "~/.screenlayout/home_dell.sh"
 
 # Make capslock an additional escape key
-exec setxkbmap -option caps:escape
+exec_always "setxkbmap -option caps:escape"
 
 # Use some gnome settings
 exec gnome-settings-daemon
