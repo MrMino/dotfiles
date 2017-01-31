@@ -149,6 +149,10 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+# Sreen brightness controls
+bindsym XF86MonBrightnessUp exec xbacklight -inc 10
+bindsym XF86MonBrightnessDown exec xbacklight -dec 10
+
 # Make toggle touchpad button work
 bindsym XF86TouchpadToggle exec ~/.i3/toggle_touchpad.sh
 
