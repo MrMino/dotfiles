@@ -154,3 +154,6 @@ bindsym $mod+r mode "resize"
 bar {
         status_command i3status
 }
+
+# Screen layout
+exec ~/.screenlayout/home_dell.sh
