@@ -157,3 +157,6 @@ bar {
 
 # Screen layout
 exec ~/.screenlayout/home_dell.sh
+
+# Make capslock an additional escape key
+exec setxkbmap -option caps:escape
