@@ -173,6 +173,9 @@ bindsym Mod4+l exec "~/.i3/i3lock-fancy/lock"
 # finds out, if available)
 bar {
         status_command i3status
+		
+		# Move the i3bar to the top
+		position top
 }
 
 # Screen layout
