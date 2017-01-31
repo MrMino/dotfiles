@@ -149,6 +149,11 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+# Pulse Audio controls
+bindsym F11 exec ~/.i3/audio/volume.sh down
+bindsym F12 exec ~/.i3/audio/volume.sh up
+bindsym XF86AudioMute exec ~/.i3/audio/volume.sh toggle
+
 # Media player controls
 bindsym XF86AudioPlay exec playerctl play
 bindsym XF86AudioPause exec playerctl pause
