@@ -194,3 +194,6 @@ exec gnome-settings-daemon
 
 # Hide border on workspaces with only one window
 hide_edge_borders smart
+
+# Automatically mount the secondary drive
+exec udisksctl mount -b /dev/sdb7
