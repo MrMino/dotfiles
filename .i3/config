@@ -183,3 +183,6 @@ exec ~/.screenlayout/home_dell.sh
 
 # Make capslock an additional escape key
 exec setxkbmap -option caps:escape
+
+# Use some gnome settings
+exec gnome-settings-daemon
