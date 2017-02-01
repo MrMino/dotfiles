@@ -164,9 +164,9 @@ bindsym F12 exec ~/.i3/audio/volume.sh up
 bindsym XF86AudioMute exec ~/.i3/audio/volume.sh toggle
 
 # Media player controls
-bindsym F8 exec ~/.i3/media/media_controlls.py previous
-bindsym F9 exec ~/.i3/media/media_controlls.py toggle
-bindsym F10 exec ~/.i3/media/media_controlls.py next
+bindsym F8 exec rhythmbox-client --previous
+bindsym F9 exec rhythmbox-client --play-pause
+bindsym F10 exec rhythmbox-client --next
 
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10
