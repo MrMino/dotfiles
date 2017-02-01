@@ -155,10 +155,9 @@ bindsym F12 exec ~/.i3/audio/volume.sh up
 bindsym XF86AudioMute exec ~/.i3/audio/volume.sh toggle
 
 # Media player controls
-bindsym XF86AudioPlay exec playerctl play
-bindsym XF86AudioPause exec playerctl pause
-bindsym XF86AudioNext exec playerctl next
-bindsym XF86AudioPrev exec playerctl previousk
+bindsym F8 exec ~/.i3/media/media_controlls.py previous
+bindsym F9 exec ~/.i3/media/media_controlls.py toggle
+bindsym F10 exec ~/.i3/media/media_controlls.py next
 
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10
