@@ -13,7 +13,11 @@ set $mod Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 8
+font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+#font pango: Cantarell 11, Icons 9
+#font pango: Bitocra 11, Icons 10
+#font pango: Terminus 11, Icons 10
+font pango: FontAwesome 11, Icons 10
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -190,6 +194,13 @@ exec_always "setxkbmap -option caps:escape"
 
 # Use some gnome settings
 exec gnome-settings-daemon
+
+# Layout colors           bord    bg      text 
+client.focused            #383838 #383838 #BBBBBB #4F4F4F
+client.focused_inactive   #1A1A1A #1A1A1A #424242 #121212
+client.unfocused          #1A1A1A #1A1A1A #4F4F4F #1A1A1A
+client.urgent             #1A1A1A #3B89B5 #a5a5a5 #1A1A1A
+client.background         #121212
 
 # Hide border on workspaces with only one window
 hide_edge_borders smart
