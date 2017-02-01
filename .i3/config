@@ -200,6 +200,9 @@ exec_always "setxkbmap -option caps:escape"
 # Use some gnome settings
 exec gnome-settings-daemon
 
+# Rice up the desktop with compton
+exec_always compton -D 5 -f
+
 # Layout colors           bord    bg      text 
 client.focused            #383838 #383838 #BBBBBB #4F4F4F
 client.focused_inactive   #1A1A1A #1A1A1A #424242 #121212
