@@ -207,3 +207,6 @@ hide_edge_borders smart
 
 # Automatically mount the secondary drive
 exec udisksctl mount -b /dev/sdb7
+
+# Set default desktop layout to tabbed (default is tiling)
+workspace_layout tabbed
