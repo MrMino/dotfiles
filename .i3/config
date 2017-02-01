@@ -186,7 +186,7 @@ bar {
 		position top
 }
 
-# Screen layout
+# Execute display layout scripts
 exec_always "~/.screenlayout/home_dell.sh"
 
 # Make capslock an additional escape key
