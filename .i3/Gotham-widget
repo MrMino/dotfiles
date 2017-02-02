@@ -14,6 +14,8 @@ conky.config = {
 	own_window_colour = '#000000',
 	own_window_argb_visual = false,
 	own_window_argb_value = 0,
+	
+	alignment = 'top_right',
 
 	double_buffer = true,
 	maximum_width = 550,
@@ -24,9 +26,8 @@ conky.config = {
 	default_color = 'white',
 	default_shade_color = 'red',
 	default_outline_color = 'green',
-	alignment = 'top_right',
-	gap_x = 0,
-	gap_y = 20,
+	gap_x = 40,
+	gap_y = 60,
 	no_buffers = true,
 	uppercase = false,
 	cpu_avg_samples = 2,
