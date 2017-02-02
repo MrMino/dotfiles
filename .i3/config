@@ -216,5 +216,8 @@ hide_edge_borders smart
 # Automatically mount the secondary drive
 exec udisksctl mount -b /dev/sdb7
 
+# Set up wallpaper
+exec_always feh --bg-scale ~/.i3/wallpapers/desktop-background3.jpg
+
 # Set default desktop layout to tabbed (default is tiling)
 workspace_layout tabbed
