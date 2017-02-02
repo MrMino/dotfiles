@@ -197,16 +197,16 @@ bar {
 }
 
 # Execute display layout scripts
-exec_always "~/.screenlayout/home_dell.sh"
+exec "~/.screenlayout/home_dell.sh"
 
 # Make capslock an additional escape key
-exec_always "setxkbmap -option caps:escape"
+exec "setxkbmap -option caps:escape"
 
 # Use some gnome settings
 exec gnome-settings-daemon
 
 # Rice up the desktop with compton
-exec_always compton -D 5 -f
+exec compton -D 5 -f
 
 # Layout colors           bord    bg      text 
 client.focused            #383838 #383838 #BBBBBB #4F4F4F
