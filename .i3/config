@@ -5,8 +5,9 @@
 # this file and re-run i3-config-wizard(1).
 #
 
-# First, as fast as possible, set the background to black
-exec hsetroot -solid '#000000'
+# Set up wallpaper
+exec "sleep 0.05; ~/.fehbg"
+
 
 # i3 config file (v4)
 #
@@ -205,9 +206,6 @@ exec "setxkbmap -option caps:escape"
 # Use some gnome settings
 exec gnome-settings-daemon
 
-# Rice up the desktop with compton
-exec compton -D 5 -f
-
 # Layout colors           bord    bg      text 
 client.focused            #383838 #383838 #BBBBBB #4F4F4F
 client.focused_inactive   #1A1A1A #1A1A1A #424242 #121212
@@ -227,8 +225,8 @@ workspace_layout tabbed
 # Make focus not follow the mouse
 focus_follows_mouse no
 
-# Set up wallpaper
-exec "sleep 0.1; ~/.fehbg"
-
 # Start conky's Gotham widget
 exec "conky -c ~/.conky/Gotham/Gotham"
+
+# Rice up the desktop with compton
+exec "compton -D 5 -f -b"
