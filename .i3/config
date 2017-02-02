@@ -217,7 +217,10 @@ hide_edge_borders smart
 exec udisksctl mount -b /dev/sdb7
 
 # Set up wallpaper
-exec_always feh --bg-scale ~/.i3/wallpapers/desktop-background3.jpg
+exec_always feh --bg-scale ~/.i3/wallpapers/mountain.jpg
 
 # Set default desktop layout to tabbed (default is tiling)
 workspace_layout tabbed
+
+# Make focus not follow the mouse
+focus_follows_mouse no
