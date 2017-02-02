@@ -226,7 +226,7 @@ workspace_layout tabbed
 focus_follows_mouse no
 
 # Start conky's Gotham widget
-exec "conky -c ~/.conky/Gotham/Gotham"
+exec "conky -c ~/.i3/Gotham-widget"
 
 # Rice up the desktop with compton
 exec "compton -D 5 -f -b"
