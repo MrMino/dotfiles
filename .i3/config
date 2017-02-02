@@ -229,3 +229,6 @@ focus_follows_mouse no
 
 # Set up wallpaper
 exec "sleep 0.1; ~/.fehbg"
+
+# Start conky's Gotham widget
+exec "conky -c ~/.conky/Gotham/Gotham"
