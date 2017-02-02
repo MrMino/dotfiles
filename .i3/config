@@ -213,7 +213,7 @@ client.focused            #383838 #383838 #BBBBBB #4F4F4F
 client.focused_inactive   #1A1A1A #1A1A1A #424242 #121212
 client.unfocused          #1A1A1A #1A1A1A #4F4F4F #1A1A1A
 client.urgent             #1A1A1A #3B89B5 #a5a5a5 #1A1A1A
-client.background         #121212
+client.background         #000000
 
 # Hide border on workspaces with only one window
 hide_edge_borders smart
