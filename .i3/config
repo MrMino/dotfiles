@@ -5,6 +5,9 @@
 # this file and re-run i3-config-wizard(1).
 #
 
+# First, as fast as possible, set the background to black
+exec hsetroot -solid '#000000'
+
 # i3 config file (v4)
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
@@ -218,11 +221,11 @@ hide_edge_borders smart
 # Automatically mount the secondary drive
 exec udisksctl mount -b /dev/sdb7
 
-# Set up wallpaper
-exec_always feh --bg-scale ~/.i3/wallpapers/mountain.jpg
-
 # Set default desktop layout to tabbed (default is tiling)
 workspace_layout tabbed
 
 # Make focus not follow the mouse
 focus_follows_mouse no
+
+# Set up wallpaper
+exec "sleep 0.1; ~/.fehbg"
