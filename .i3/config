@@ -6,7 +6,7 @@
 #
 
 # Set up wallpaper
-exec "sleep 0.05; ~/.fehbg"
+exec --no-startup-id "sleep 0.05; ~/.fehbg"
 
 
 # i3 config file (v4)
@@ -182,8 +182,8 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 bindsym XF86TouchpadToggle exec ~/.i3/toggle_touchpad.sh
 
 # Make sure touchpad palm rejection
-exec "xinput set-prop 15 'Synaptics Palm Detection' 1"
-exec "xinput set-prop 15 'Synaptics Palm Dimensions' 5, 5"
+exec --no-startup-id "xinput set-prop 15 'Synaptics Palm Detection' 1"
+exec --no-startup-id "xinput set-prop 15 'Synaptics Palm Dimensions' 5, 5"
 
 # Bind lockscreen to super+l
 bindsym Mod4+l exec "~/.i3/i3lock-fancy/lock"
@@ -204,13 +204,13 @@ bar {
 }
 
 # Execute display layout scripts
-exec "~/.screenlayout/home_dell.sh"
+exec --no-startup-id "~/.screenlayout/home_dell.sh"
 
 # Make capslock an additional escape key
-exec "setxkbmap -option caps:escape"
+exec --no-startup-id "setxkbmap -option caps:escape"
 
 # Use some gnome settings
-exec gnome-settings-daemon
+exec --no-startup-id gnome-settings-daemon
 
 # Layout colors           bord    bg      text 
 client.focused            #383838 #383838 #BBBBBB #4F4F4F
@@ -223,7 +223,7 @@ client.background         #000000
 hide_edge_borders smart
 
 # Automatically mount the secondary drive
-exec udisksctl mount -b /dev/sdb7
+exec --no-startup-id udisksctl mount -b /dev/sdb7
 
 # Set default desktop layout to tabbed (default is tiling)
 workspace_layout tabbed
@@ -232,7 +232,7 @@ workspace_layout tabbed
 focus_follows_mouse no
 
 # Start conky's Gotham widget
-exec "sleep 1; conky -c ~/.i3/Gotham-widget"
+exec --no-startup-id "sleep 1; conky -c ~/.i3/Gotham-widget"
 
 # Rice up the desktop with compton
-exec "compton -D 5 -f -b"
+exec --no-startup-id "compton -D 5 -f -b"
