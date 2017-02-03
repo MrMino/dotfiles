@@ -182,8 +182,8 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 bindsym XF86TouchpadToggle exec ~/.i3/toggle_touchpad.sh
 
 # Make sure touchpad palm rejection
-exec_always "xinput set-prop 15 'Synaptics Palm Detection' 1"
-exec_always "xinput set-prop 15 'Synaptics Palm Dimensions' 5, 5"
+exec "xinput set-prop 15 'Synaptics Palm Detection' 1"
+exec "xinput set-prop 15 'Synaptics Palm Dimensions' 5, 5"
 
 # Bind lockscreen to super+l
 bindsym Mod4+l exec "~/.i3/i3lock-fancy/lock"
