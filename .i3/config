@@ -213,7 +213,7 @@ exec --no-startup-id "setxkbmap -option caps:escape"
 exec --no-startup-id gnome-settings-daemon
 
 # Layout colors           bord    bg      text 
-client.focused            #383838 #383838 #BBBBBB #4F4F4F
+client.focused            #FFA300 #FFA300 #000000 #4F4F4F
 client.focused_inactive   #1A1A1A #1A1A1A #424242 #121212
 client.unfocused          #1A1A1A #1A1A1A #4F4F4F #1A1A1A
 client.urgent             #1A1A1A #3B89B5 #a5a5a5 #1A1A1A
