@@ -165,14 +165,15 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # Pulse Audio controls
-bindsym F11 exec ~/.i3/audio/volume.sh down
-bindsym F12 exec ~/.i3/audio/volume.sh up
+bindsym XF86AudioLowerVolume exec ~/.i3/audio/volume.sh down
+bindsym XF86AudioRaiseVolume exec ~/.i3/audio/volume.sh up
 bindsym XF86AudioMute exec ~/.i3/audio/volume.sh toggle
 
 # Media player controls
-bindsym F8 exec rhythmbox-client --previous
-bindsym F9 exec rhythmbox-client --play-pause
-bindsym F10 exec rhythmbox-client --next
+bindsym XF86AudioPrev exec rhythmbox-client --previous
+bindsym XF86AudioNext exec rhythmbox-client --next
+bindsym XF86AudioPlay exec rhythmbox-client --play-pause
+bindsym XF86AudioStop exec rhythmbox-client --stop
 
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10
