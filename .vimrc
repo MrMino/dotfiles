@@ -32,8 +32,8 @@ Plugin 'vim-scripts/indentpython.vim'
 Plugin 'chrisbra/Recover.vim'
 Plugin 'AndrewRadev/sideways.vim'
 Plugin 'justinmk/vim-syntax-extra'
-Bundle 'jistr/vim-nerdtree-tabs'
-Bundle 'Valloric/YouCompleteMe'
+Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'Valloric/YouCompleteMe'
 "
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
