@@ -222,6 +222,9 @@ au BufNewFile,BufRead *.js, *.html, *.css
 " Find trailing whitespaces 
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
+" Start emmet only in html and css files.
+let g:user_emmet_install_global = 0
+autocmd FileType html,css EmmetInstall
 
 """""""""""""""""""""""""
 """ NERDTree settings """
