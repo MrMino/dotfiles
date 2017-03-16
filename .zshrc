@@ -171,3 +171,6 @@ source /usr/local/bin/virtualenvwrapper.sh
 export ENHANCD_FILTER=fzf
 alias -g ...=...
 export ENHANCD_DOT_ARG=...
+
+# The ghdl, that was installed from source.
+export PATH=/opt/ghdl-updates/bin/:$PATH
