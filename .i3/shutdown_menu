@@ -38,7 +38,7 @@ HLBG_COLOR="#383838"
 # Options not related to colors
 ROFI_TEXT=""
 ROFI_OPTIONS="-hide-scrollbar -bw 0 -eh 2 \
-   	-width 100 -padding 395 -opacity 85 -separator-style none"
+   	-width 100 -padding 300% -opacity 85 -separator-style none"
 
 # Zenity options
 ZENITY_TITLE="Menu"
