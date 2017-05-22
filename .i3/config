@@ -193,6 +193,7 @@ bindsym Mod4+l exec "~/.i3/i3lock-fancy/lock"
 # finds out, if available)
 bar {
 	status_command i3blocks -c ~/.i3/i3blocks.conf
+	font pango: San Francisco Display 9
 
 	# Move the i3bar to the top
 	position top
