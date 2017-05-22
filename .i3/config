@@ -228,7 +228,7 @@ hide_edge_borders smart
 exec --no-startup-id udisksctl mount -b /dev/sdb7
 
 # Set default desktop layout to tabbed (default is tiling)
-workspace_layout tabbed
+#workspace_layout tabbed
 
 # Make focus not follow the mouse
 focus_follows_mouse no
