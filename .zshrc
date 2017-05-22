@@ -54,7 +54,7 @@ plugins=()
 
 # User configuration
 
-  export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
+  export PATH=$PATH:"/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -173,4 +173,4 @@ alias -g ...=...
 export ENHANCD_DOT_ARG=...
 
 # The ghdl, that was installed from source.
-export PATH=/opt/ghdl-updates/bin/:$PATH
+export PATH=$PATH:/opt/ghdl-updates/bin/
