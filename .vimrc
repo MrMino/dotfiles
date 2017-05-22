@@ -35,6 +35,7 @@ Plugin 'justinmk/vim-syntax-extra'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'mattn/emmet-vim'
+Plugin 'fatih/vim-go'
 "
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -218,6 +219,13 @@ au BufNewFile,BufRead *.js, *.html, *.css
     \ set tabstop=2
     \ set softtabstop=2
     \ set shiftwidth=2 
+
+au BufNewFile,BufRead *.go
+    \ set textwidth=79 |
+    \ set expandtab |
+    \ set autoindent |
+    \ set fileformat=unix |
+    \ set foldmethod=syntax
 
 " Find trailing whitespaces 
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
