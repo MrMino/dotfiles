@@ -147,9 +147,9 @@ alias vim='vimx' # Better vim
 alias ctrlc='xclip -selection c' # Fast piping into clipboard
 
 
-##################
-# Keymap related #
-##################
+######################
+# Keybinding related #
+######################
 
 bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
