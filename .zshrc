@@ -1,3 +1,16 @@
+##############################################
+# Uncomment below to enable .zshrc profiling #
+##############################################
+
+# zmodload zsh/zprof
+
+# (also see the end of the file)
+
+
+######################
+# Added by oh-my-zsh #
+######################
+
 # Path to your oh-my-zsh installation.
   export ZSH=/home/MrMino/.oh-my-zsh
 
@@ -27,7 +40,7 @@ HYPHEN_INSENSITIVE="true"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # COMPLETION_WAITING_DOTS="true"
@@ -49,11 +62,12 @@ HYPHEN_INSENSITIVE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git virtualenv virtualenvwrapper tmux tmuxinator pip autoenv zsh-auto-virtualenv)
+# (history-substring-search is required if vi-mode is on)
+plugins=(git pip history-substring-search vi-mode)
 
 # User configuration
 
-  export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -84,52 +98,69 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 
-#--- ADD BY MRMINO ---
-#Add $DEFAULT_USER, so zsh themes won't clutter up the prompt
+#############
+# Variables #
+#############
+
+# Ommit username when rendering prompt
 DEFAULT_USER="MrMino"
 
-
-#Add package suggestion feature
-# . /etc/zsh_command_not_found
-
-#Add my own script directory. For reasons.
+# Add script directory to path
 PATH=${PATH}:~/bash_scripts
 
-#Add alias for fast piping into 'ctrl+c ctrl+v' clipboard
-#somecommand | ctrlc
-alias ctrlc='xclip -selection c'
+# Disable escape key lag (make it 1 milisecond)
+export KEYTIMEOUT=1
 
-#I need that stack overflow badge and I'm willing to do anyhing to get it!
-#google-chrome http://stackoverflow.com & echo "Get that badge!"
+# Command not found package suggestion
+# (disabled: doesn't work well under proxy)
+# . /etc/zsh_command_not_found
 
-#Fuzzy finder. Wonder when I'll actually start to use it :|
+
+#########################
+# Plugin initialization #
+#########################
+
+# Inittialize Fuzzy Finder
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-#DISABLED: learning virtualenv, this has to go.
-#Could it be that it breaks terminal plugin (ctrl+shift+t) in sublime text O_o? -- No.
-#OpenCV is a bitch to install, I tell ya. This is for OpenCV in python3. IHNIWID. 
-# virtualenv and virtualenvwrapper
-#export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-#export WORKON_HOME=$HOME/.virtualenvs
+# Initialize Z (https://github.com/rupa/z)
+source ~/bin/z/z.sh
 
-#initialize Z (https://github.com/rupa/z) 
-. ~/bin/z/z.sh 
+# Initialize ZSH Syntax highlighting plugin
+source /home/MrMino/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-#calculator
+# Calculator
 '='(){
     calc="$@"
-    # Uncomment the below for (p → +) and (x → *)
-    #calc="${calc//p/+}"
-    #calc="${calc//x/*}"
+    calc="${calc//p/+}"
+    calc="${calc//x/*}"
     echo -e "$calc\nquit"| gcalccmd | sed "s:^> ::g"
 }
 
-#ZSH Syntax highlighting plugin
-source /home/MrMino/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-#Autoenv
-source ~/.autoenv/activate.sh
 
-#Pygmentized cat
-alias pcat='pygmentize -O style=monokai -f terminal -g'
+###########
+# Aliases #
+###########
 
-alias vim='vimx'
+alias pcat='pygmentize -O style=monokai -f terminal -g' #Pygmentized cat
+alias vim='vimx' # Better vim
+alias ctrlc='xclip -selection c' # Fast piping into clipboard
+
+
+##################
+# Keymap related #
+##################
+
+bindkey -M vicmd 'k' history-substring-search-up
+bindkey -M vicmd 'j' history-substring-search-down
+bindkey -M vicmd "." insert-last-word
+
+# Disable ctrl+s XOFF functionality (a.k.a. don't hang my terminal)
+stty -ixon
+
+
+##############################################
+# Uncomment below to enable .zshrc profiling #
+##############################################
+
+# zprof
