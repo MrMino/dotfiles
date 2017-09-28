@@ -153,6 +153,7 @@ alias ctrlc='xclip -selection c' # Fast piping into clipboard
 
 bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
+bindkey -M vicmd '\e' vi-insert # escape key in vi-mode
 
 bindkey -M viins "^[." insert-last-word # alt + .
 bindkey -M viins "^[," infer-next-history # alt + ,
