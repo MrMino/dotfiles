@@ -1,12 +1,9 @@
-" Encoding
-set encoding=utf-8
+""""""""""""""""""""""""
+""" Plugins (Vundle) """
+""""""""""""""""""""""""
 
-set nocompatible              " required
-filetype off                  " required
-
-"""""""""""""""
-""" Plugins """
-"""""""""""""""
+" Disable filetype (Vundle requires it)
+filetype off
 
 " Set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -45,13 +42,20 @@ Plugin 'honza/vim-snippets'
 
 " All of your Plugins must be added before the following lines
 call vundle#end()
+"
+" Reenable filetype
+filetype plugin indent on
+
 
 """"""""""""""""""""""
 """ Basic behavior """
 """"""""""""""""""""""
 
-" Required for correct filetype detection, type plugins, and auto-indentation
-filetype plugin indent on
+" Disable Vi compatibility mode
+set nocompatible
+
+" Output (terminal) encoding
+set encoding=utf-8
 
 " Powerline for vim (managed by pip)
 python3 from powerline.vim import setup as powerline_setup
