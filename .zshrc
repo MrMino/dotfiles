@@ -154,10 +154,17 @@ alias ctrlc='xclip -selection c' # Fast piping into clipboard
 bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
 
-bindkey -M viins "^[." insert-last-word
-bindkey -M viins "^[," infer-next-history
-bindkey -M viins "^[[1;5D" vi-backward-word-end
-bindkey -M viins "^[[1;5C" vi-forward-word-end
+bindkey -M viins "^[." insert-last-word # alt + .
+bindkey -M viins "^[," infer-next-history # alt + ,
+bindkey -M viins "^[[1;5D" vi-backward-word-end # ctrl + <left arrow>
+bindkey -M viins "^[[1;5C" vi-forward-word-end # ctrl + <right arrow>
+
+bindkey -M viins "^[[1~" beginning-of-line # Home
+bindkey -M viins -s "^[[2~" "" # Insert
+bindkey -M viins "^[[3~" delete-char # Delete
+bindkey -M viins "^[[4~" end-of-line # End
+bindkey -M viins -s "^[[5~" "" # PageUp
+bindkey -M viins -s "^[[6~" "" # PageDown
 
 # Disable ctrl+s XOFF functionality (a.k.a. don't hang my terminal)
 stty -ixon
