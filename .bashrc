@@ -9,5 +9,3 @@ fi
 # export SYSTEMD_PAGER=
 
 # User specific aliases and functions
-
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
