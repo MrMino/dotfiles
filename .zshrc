@@ -1,3 +1,8 @@
+# (MrM) This should always be at the start of the file
+# (MrM) Uncomment this as well as the last line of this file to start zsh with startup
+# (MrM) profiler
+zmodload zsh/zprof
+
 # Path to your oh-my-zsh installation.
 export ZSH=/home/mrmino/.zplug/repos/robbyrussell/oh-my-zsh
 
@@ -49,12 +54,14 @@ HYPHEN_INSENSITIVE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=()
+plugins=(git tmux tmuxinator pip zsh-autosuggestions)
 # Also used at some point: autoenv zsh-auto-virtualenv virtualenvwrapper 
 
 # User configuration
+# Also, added ~/bin, /opt/ghdl-updates/bin
 
-  export PATH=$PATH:"/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
+export PATH=$PATH:"/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:~/bin:/opt/ghdl-updates/bin:~/Android/Sdk/platform-tools:~/Android/Sdk/tools"
+# export fpath=(~/.z-bin $fpath)
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -85,49 +92,47 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 #~~~ZPLUG~~~
-source ~/.zplug/init.zsh
-zplug 'zplug/zplug', hook-build:'zplug --self-manage'
+#source ~/.zplug/init.zsh
+#zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 
-zplug "junegunn/fzf-bin", \
-	from:gh-r, \
-	as:command, \
-	rename-to:fzf, \
-	use:"*darwin*amd64*"
-zplug "b4b4r07/enhancd", use:init.sh
+#zplug "junegunn/fzf-bin", \
+	#from:gh-r, \
+	#as:command, \
+	#rename-to:fzf, \
+	#use:"*darwin*amd64*"
+#zplug "plugins/git", from:oh-my-zsh, as:plugin
+#zplug "plugins/tmux", from:oh-my-zsh, as:plugin
+#zplug "plugins/tmuxinator", from:oh-my-zsh, as:plugin
+#zplug "plugins/pip", from:oh-my-zsh, as:plugin
+#zplug "zsh-users/zsh-autosuggestions", from:oh-my-zsh, as:plugin, \
+	#use:~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh, defer:3
+#zplug "zsh-users/zsh-syntax-highlighting", use:zsh-syntax-highlighting.zsh, \
+	#as:plugin, defer:3
+#zplug "plugins/per-directory-history", from:oh-my-zsh, as:plugin, defer:3
+#zplug "plugins/history-substring-search", from:oh-my-zsh, as:plugin, defer:3
+#zplug "themes/agnoster", from:oh-my-zsh, as:theme
 
-
-zplug "plugins/git", from:oh-my-zsh, as:plugin
-zplug "plugins/virtualenv", from:oh-my-zsh, as:plugin
-zplug "plugins/tmux", from:oh-my-zsh, as:plugin
-zplug "plugins/tmuxinator", from:oh-my-zsh, as:plugin
-zplug "plugins/pip", from:oh-my-zsh, as:plugin
-zplug "zsh-users/zsh-syntax-highlighting", use:zsh-syntax-highlighting.zsh, \
-	as:plugin, defer:3
 
 #-----------
-zplug load 
+#zplug load
 #~~~~~~~~~~~
 
 #Add $DEFAULT_USER, so zsh themes won't clutter up the prompt
 DEFAULT_USER="mrmino"
 
 # Add package suggestion feature
-. /etc/zsh_command_not_found
+source /etc/zsh_command_not_found
 
 # Add alias for fast piping into 'ctrl+c ctrl+v' clipboard
 # Usage: somecommand | ctrlc
 alias ctrlc='xclip -selection c'
-
-# Switch to ls++
-# https://github.com/trapd00r/ls--
-alias ls='ls++'
-alias lsls='/bin/ls --color=tty'
 
 # Fuzzy finder initialization.
 source ~/.fzf.zsh
 
 # Initialize Z (https://github.com/rupa/z) 
 source ~/.z-bin/z.sh 
+# autoload z
 
 # Calculator
 '='(){
@@ -144,9 +149,6 @@ alias pcat='pygmentize -O style=monokai -f terminal -g'
 # Required on Fedora / RedHat for many features
 # Alias vim into extended vim
 #alias vim='vimx'
-
-# Add ~/bin to path
-export PATH=$PATH:~/bin
 
 # Always open less with pygmentize
 export LESSOPEN='|pygmentize %s'
@@ -165,12 +167,13 @@ alias upip3='pip3 --user'
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/
-source /usr/local/bin/virtualenvwrapper.sh
+source /usr/local/bin/virtualenvwrapper_lazy.sh
 
-# Enhanced cd
-export ENHANCD_FILTER=fzf
-alias -g ...=...
-export ENHANCD_DOT_ARG=...
 
-# The ghdl, that was installed from source.
-export PATH=$PATH:/opt/ghdl-updates/bin/
+# Temporary (? zsh reconfigurations, 09.06.17, startup benching)
+source ~/bin/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# (MrM) This should be always at the end.
+# (MrM) Uncomment this as well as the first line in this file to use startup 
+# (MrM) profiler
+#zprof
