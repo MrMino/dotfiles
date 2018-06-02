@@ -60,7 +60,7 @@ plugins=(git tmux tmuxinator pip zsh-autosuggestions)
 # User configuration
 # Also, added ~/bin, /opt/ghdl-updates/bin
 
-export PATH=$PATH:"/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:~/bin:/opt/ghdl-updates/bin:~/Android/Sdk/platform-tools:~/Android/Sdk/tools"
+export PATH=$PATH:"/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
 # export fpath=(~/.z-bin $fpath)
 # export MANPATH="/usr/local/man:$MANPATH"
 
