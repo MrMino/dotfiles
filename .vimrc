@@ -263,22 +263,22 @@ set shiftwidth=4 |
 """ Per-filetype preferences """
 """"""""""""""""""""""""""""""""
 
-au BufNewFile,BufRead *.py
-    \ set textwidth=79 |
+au BufNewFile,BufRead *.js,*.html,*.css,*.robot,*.py,*.c,*.jl
     \ set expandtab |
-    \ set autoindent |
-    \ set fileformat=unix |
+    \ set autoindent
+
+au BufNewFile,BufRead *.py,*.robot,*.pl,*.c,*.jl
+    \ set textwidth=79 |
+    \ set fileformat=unix
+
+au BufNewFile,BufRead *.py
     \ let python_highlight_all=1
 
-au BufNewFile,BufRead *.js, *.html, *.css
-    \ set tabstop=2
-    \ set softtabstop=2
-    \ set shiftwidth=2 
+au BufNewFile,BufRead *.pl
+    \ setf prolog
 
 au BufNewFile,BufRead *.robot
-    \ setf robot |
-    \ set expandtab |
-    \ set autoindent |
+    \ setf robot
 
 " Find trailing whitespaces 
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
