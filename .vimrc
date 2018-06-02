@@ -36,6 +36,7 @@ Plugin 'mfukar/robotframework-vim'
 Plugin 'othree/xml.vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
+Plugin 'mxw/vim-prolog'
 
 " Plugin 'metakirby5/codi.vim' " - Can't get this to work now, though it is
                                " pure gold
