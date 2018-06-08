@@ -143,15 +143,14 @@ source ~/.z-bin/z.sh
     echo -e "$calc\nquit"| gcalccmd | sed "s:^> ::g"
 }
 
-# Pygmentized cat
-alias pcat='pygmentize -O style=monokai -f terminal -g'
-
 # Required on Fedora / RedHat for many features
 # Alias vim into extended vim
 #alias vim='vimx'
 
 # Always open less with pygmentize
 export LESSOPEN='|pygmentize %s'
+# Pygmentized cat
+alias pcat='pygmentize -O style=monokai -f terminal -g'
 
 # Better do it before something goes terribly wrong
 # Disable rm 
