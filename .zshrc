@@ -128,12 +128,6 @@ alias pcat='pygmentize -O style=monokai -f terminal -g'
 # Disable rm 
 alias rm='echo "rm is disabled, use trash or /bin/rm instead."'
 
-# Aliasses for easier pip management
-alias spip='sudo -H pip'
-alias upip='pip --user'
-alias spip3='sudo -H pip3'
-alias upip3='pip3 --user'
-
 # Virtualenvwrapper support
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 export WORKON_HOME=$HOME/.virtualenvs
