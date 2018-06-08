@@ -61,8 +61,6 @@ plugins=(git tmux tmuxinator pip zsh-autosuggestions)
 # Also, added ~/bin, /opt/ghdl-updates/bin
 
 export PATH=$PATH:"/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
-# export fpath=(~/.z-bin $fpath)
-# export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
 
@@ -90,32 +88,6 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
-#~~~ZPLUG~~~
-#source ~/.zplug/init.zsh
-#zplug 'zplug/zplug', hook-build:'zplug --self-manage'
-
-#zplug "junegunn/fzf-bin", \
-	#from:gh-r, \
-	#as:command, \
-	#rename-to:fzf, \
-	#use:"*darwin*amd64*"
-#zplug "plugins/git", from:oh-my-zsh, as:plugin
-#zplug "plugins/tmux", from:oh-my-zsh, as:plugin
-#zplug "plugins/tmuxinator", from:oh-my-zsh, as:plugin
-#zplug "plugins/pip", from:oh-my-zsh, as:plugin
-#zplug "zsh-users/zsh-autosuggestions", from:oh-my-zsh, as:plugin, \
-	#use:~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh, defer:3
-#zplug "zsh-users/zsh-syntax-highlighting", use:zsh-syntax-highlighting.zsh, \
-	#as:plugin, defer:3
-#zplug "plugins/per-directory-history", from:oh-my-zsh, as:plugin, defer:3
-#zplug "plugins/history-substring-search", from:oh-my-zsh, as:plugin, defer:3
-#zplug "themes/agnoster", from:oh-my-zsh, as:theme
-
-
-#-----------
-#zplug load
-#~~~~~~~~~~~
 
 #Add $DEFAULT_USER, so zsh themes won't clutter up the prompt
 DEFAULT_USER="mrmino"
