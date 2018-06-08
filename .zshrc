@@ -58,8 +58,8 @@ plugins=(git tmux tmuxinator pip zsh-autosuggestions)
 # Also used at some point: autoenv zsh-auto-virtualenv virtualenvwrapper 
 
 # User configuration
-# Also, added ~/bin, /opt/ghdl-updates/bin
 
+# Path
 export PATH=$PATH:"/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
 
 source $ZSH/oh-my-zsh.sh
@@ -95,7 +95,7 @@ DEFAULT_USER="mrmino"
 # Add package suggestion feature
 source /etc/zsh_command_not_found
 
-# Add alias for fast piping into 'ctrl+c ctrl+v' clipboard
+# Add alias for fast piping into xclip clipboard
 # Usage: somecommand | ctrlc
 alias ctrlc='xclip -selection c'
 
@@ -140,8 +140,7 @@ export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/
 source /usr/local/bin/virtualenvwrapper_lazy.sh
 
-
-# Temporary (? zsh reconfigurations, 09.06.17, startup benching)
+# ZSH syntax highliting - keep this always at the end (before zprof)
 source ~/bin/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # (MrM) This should be always at the end.
