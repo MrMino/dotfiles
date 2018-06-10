@@ -356,7 +356,7 @@ function do_download_i3_config {
 	log_msg "Downloading i3 config."
 	dotfiles_dir=/tmp/dotfiles
 
-	if ! git clone $DOTFILES_REPO_URL $dotfiles_dir &>> $LOG_PATH
+	if ! git clone $DOTFILES_REPO_URL $dotfiles_dir --branch unify &>> $LOG_PATH
 	then
 		log_msg "Cloning dotfiles repo failed."
 		exit 22
@@ -368,6 +368,8 @@ function do_download_i3_config {
 	fi
 	mv $dotfiles_dir/.i3 ~/.i3
 	rm -rf $dotfiles_dir &>> $LOG_PATH
+
+	log_msg "Done downloading i3 config."
 }
 
 cd ~
