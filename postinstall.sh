@@ -335,6 +335,7 @@ function do_make_i3_default {
     sed -i 's/XSession=.*/XSession=i3/' $session_file
 }
 
+# TODO do we really need this?
 function do_install_blockscripts {
     blockscripts_url=https://github.com/Anachron/i3blocks.git
     blockscripts_dir=~/.bin/blockscripts
@@ -412,4 +413,4 @@ install_pkg i3status
 install_pkg cmus
 
 do_make_i3_default
-do_install_blockscripts
+# do_install_blockscripts
