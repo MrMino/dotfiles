@@ -320,6 +320,7 @@ function do_gdsf_config {
 	pager_conf="$gdsf_dir/diff-so-fancy | less --tabs=4 -RFX --pattern '^(Date|added|deleted|modified):'"
 	git config --global core.pager "$pager_conf"
     git config --bool --global diff-so-fancy.markEmptyLines false
+	log_msg
 }
 
 cd ~
