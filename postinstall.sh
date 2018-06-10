@@ -372,6 +372,7 @@ do_zshsh_install
 
 chown $SUDO_USER ~/.zsh_history
 
+install_pkg xclip
 install_pkg trash-cli
 install_pip3_pkg virtualenv
 install_pip3_pkg virtualenvwrapper
