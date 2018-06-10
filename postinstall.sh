@@ -318,7 +318,7 @@ function do_gdsf_install {
 
 function do_gdsf_config {
 	log_msg "Configuring git core.pager to diff-so-fancy."
-	pager_conf="$gdsf_dir/diff-so-fancy | less --tabs=4 -RFX --pattern '^(Date|added|deleted|modified):'"
+	pager_conf="$gdsf_dir/diff-so-fancy | less --tabs=4 -RFX"
 	git config --global core.pager "$pager_conf"
     git config --bool --global diff-so-fancy.markEmptyLines false
 	log_msg
