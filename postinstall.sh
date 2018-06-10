@@ -346,7 +346,7 @@ function do_install_blockscripts {
 	return 0
     elif ! git clone $blockscripts_url $blockscripts_dir &>> $LOG_PATH; then
         log_msg "Error: blockscripts downloading failed."
-        exit 16
+        exit 21
     else
         log_msg "Finished downloading blockscripts."
     fi
