@@ -104,10 +104,10 @@ alias ctrlc='xclip -selection c'
 SCRIPT_BIN=~/.bin
 
 # Fuzzy finder initialization.
-source $SCRIPT_BIN/.fzf.zsh
+source $SCRIPT_BIN/fzf.zsh
 
 # Initialize Z (https://github.com/rupa/z) 
-source $SCRIPT_BIN/.z-bin/z.sh
+source $SCRIPT_BIN/z/z.sh
 # autoload z
 
 # Calculator
