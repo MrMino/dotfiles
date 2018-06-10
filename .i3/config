@@ -204,9 +204,6 @@ client.background         #000000
 # Hide border on workspaces with only one window
 hide_edge_borders smart
 
-# Automatically mount the secondary drive
-exec --no-startup-id udisksctl mount -b /dev/sdb7
-
 # Set default desktop layout to tabbed (default is tiling)
 #workspace_layout tabbed
 
