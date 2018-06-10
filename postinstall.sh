@@ -357,14 +357,14 @@ do_fzf_install
 do_z_install
 do_zshsh_install
 
+chown $SUDO_USER ~/.zsh_history
+
 install_pkg trash-cli
 install_pip3_pkg virtualenv
 install_pip3_pkg virtualenvwrapper
 install_pip3_pkg ipython
 install_pip3_pkg ipdb
 install_pip3_pkg pygments
-
-chown $SUDO_USER ~/.zsh_history
 
 do_vim_colorscheme_install
 do_vundle_install
