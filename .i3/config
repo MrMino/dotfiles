@@ -186,7 +186,7 @@ bar {
 }
 
 # Execute display layout scripts
-exec --no-startup-id "~/.screenlayout/home_dell.sh"
+exec --no-startup-id "~/.screenlayout/default.sh"
 
 # Make capslock an additional escape key
 exec --no-startup-id "setxkbmap -option caps:escape"
