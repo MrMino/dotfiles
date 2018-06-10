@@ -4,14 +4,12 @@
 # Should you change your keyboard layout some time, delete
 # this file and re-run i3-config-wizard(1).
 #
-
-# Set up wallpaper
-exec --no-startup-id "sleep 0.05; ~/.fehbg"
-
-
 # i3 config file (v4)
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
+
+# Set up wallpaper
+exec --no-startup-id "sleep 0.05; ~/.fehbg"
 
 set $mod Mod1
 
