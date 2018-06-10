@@ -139,7 +139,7 @@ export PROJECT_HOME=$HOME/
 source /usr/local/bin/virtualenvwrapper_lazy.sh
 
 # ZSH syntax highliting - keep this always at the end (before zprof)
-source ~/bin/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $SCRIPT_BIN/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # (MrM) This should be always at the end.
 # (MrM) Uncomment this as well as the first line in this file to use startup 
