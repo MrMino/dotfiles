@@ -323,6 +323,18 @@ function do_gdsf_config {
 	log_msg
 }
 
+function do_make_i3_default {
+    log_msg "Making i3wm the default session manager."
+    session_file=/var/lib/AccountsService/users/$SUDO_USER
+
+	if [ ! -f $session_file ]; then
+        log_msg "Error: session file not found."
+        exit 20
+    fi
+
+    sed -i 's/XSession=.*/XSession=i3/' $session_file
+}
+
 cd ~
 do_sanity_checks
 do_update_upgrade
@@ -382,3 +394,5 @@ install_pkg conky
 install_pkg compton
 install_pkg i3status
 install_pkg cmus
+
+do_make_i3_default
