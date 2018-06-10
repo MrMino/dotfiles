@@ -5,6 +5,7 @@ TMUX_CONF_URL=https://raw.githubusercontent.com/MrMino/dotfiles/unify/.tmux.conf
 ZSHRC_URL=https://raw.githubusercontent.com/MrMino/dotfiles/unify/.zshrc
 VIMRC_URL=https://raw.githubusercontent.com/MrMino/dotfiles/unify/.vimrc
 VIM_COLORSCHEME_URL=https://raw.githubusercontent.com/MrMino/dotfiles/unify/.vim/colors/brighton_modified.vim
+DOTFILES_REPO_URL=https://github.com/MrMino/dotfiles.git
 
 function log_msg {
     echo -e $@ >> $LOG_PATH
@@ -351,6 +352,24 @@ function do_install_blockscripts {
     fi
 }
 
+function do_download_i3_config {
+	log_msg "Downloading i3 config."
+	dotfiles_dir=/tmp/dotfiles
+
+	if ! git clone $DOTFILES_REPO_URL $dotfiles_dir &>> $LOG_PATH
+	then
+		log_msg "Cloning dotfiles repo failed."
+		exit 22
+	fi
+
+	if [ -d ~/.i3 ]; then
+		log_msg "Warning: ~/.i3 already exists. Removing."
+		rm -rf ~/.i3 &>> $LOG_PATH
+	fi
+	mv $dotfiles_dir/.i3 ~/.i3
+	rm -rf $dotfiles_dir &>> $LOG_PATH
+}
+
 cd ~
 do_sanity_checks
 do_update_upgrade
@@ -413,4 +432,5 @@ install_pkg i3status
 install_pkg cmus
 
 do_make_i3_default
+do_download_i3_config
 # do_install_blockscripts
