@@ -335,6 +335,21 @@ function do_make_i3_default {
     sed -i 's/XSession=.*/XSession=i3/' $session_file
 }
 
+function do_install_blockscripts {
+    blockscripts_url=https://github.com/Anachron/i3blocks.git
+    blockscripts_dir=~/.bin/blockscripts
+	log_msg "Downloading blockscripts."
+    if [ -d $blockscripts_dir ]; then
+        log_msg "Blockscripts directory (\"$blockscripts_dir\") already exists. Skipping."
+	return 0
+    elif ! git clone $blockscripts_url $blockscripts_dir &>> $LOG_PATH; then
+        log_msg "Error: blockscripts downloading failed."
+        exit 16
+    else
+        log_msg "Finished downloading blockscripts."
+    fi
+}
+
 cd ~
 do_sanity_checks
 do_update_upgrade
@@ -397,3 +412,4 @@ install_pkg i3status
 install_pkg cmus
 
 do_make_i3_default
+do_install_blockscripts
