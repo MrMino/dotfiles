@@ -373,3 +373,11 @@ do_vim_plugin_install
 do_ycm_install
 do_gdsf_install
 do_gdsf_config
+
+install_pkg i3
+install_pkg rofi
+install_pkg feh
+install_pkg conky
+install_pkg compton
+install_pkg i3status
+install_pkg cmus
