@@ -2,6 +2,7 @@
 
 LOG_PATH=/tmp/postlog
 DOTFILES_REPO_URL=https://github.com/MrMino/dotfiles.git
+VIM_COLORSCHEME_URL=https://raw.githubusercontent.com/MrMino/dotfiles/vim/.vim/colors/brighton_modified.vim
 
 function log_msg {
     echo -e $@ >> $LOG_PATH
@@ -261,7 +262,8 @@ function do_ycm_install {
 function do_vim_colorscheme_install {
 	colorscheme_dir=~/.vim/colors
     log_msg "Installing vim color scheme."
-    if ! wget --directory-prefix=$colorscheme_dir $VIMRC_URL &>> $LOG_PATH ; then
+    if ! wget --directory-prefix=$colorscheme_dir $VIM_COLORSCHEME_URL\
+            &>> $LOG_PATH ; then
         log_msg "Error: downloading color scheme failed."
         exit 18
     fi
