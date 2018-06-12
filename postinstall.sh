@@ -329,9 +329,6 @@ function download_dotfiles {
 	mv $dotfiles_dir/.git ~/.git &>> $LOG_PATH
 	mv $dotfiles_dir/.gitignore ~/.gitignore &>> $LOG_PATH
 	mv $dotfiles_dir/.gitconfig ~/.gitconfig &>> $LOG_PATH
-
-	chown -R $SUDO_USER:$SUDO_USER ~/.i3 ~/.zshrc ~/.vimrc\
-        ~/.tmux.conf ~/.git ~/.gitconfig ~/.gitignore &>> $LOG_PATH
 }
 
 cd ~
@@ -344,34 +341,39 @@ install_pkg curl
 install_pkg vim-gtk3
 install_pkg zsh
 install_pkg tmux
-
 install_pkg cmake
 install_pkg build-essential
-
-install_pkg python-pip
+# install_pkg swi-prolog
+install_pkg xclip
+install_pkg trash-cli
+install_pkg i3
+install_pkg rofi
+install_pkg feh
+install_pkg conky
+install_pkg compton
+install_pkg i3status
+install_pkg cmus
+install_pkg fonts-powerline
 install_pkg python3-pip
 install_pkg python-dev
 install_pkg python3-dev
-# install_pkg swi-prolog
-
+install_pkg python-pip
 do_pip2n3_upgrade
-do_tmux_chsh
-
-install_pip3_pkg powerline-status
-install_pkg fonts-powerline
-
-do_oh_my_zsh
-do_home_bin_dir
-chown $SUDO_USER ~/.zsh_history
-
-install_pkg xclip
-install_pkg trash-cli
 install_pip3_pkg virtualenv
 install_pip3_pkg virtualenvwrapper
 install_pip3_pkg ipython
 install_pip3_pkg ipdb
 install_pip3_pkg pygments
+install_pip3_pkg powerline-status
 
+do_make_i3_default
+do_tmux_chsh
+
+# Get back from root privileges - we dont want to populate home
+# with root owned files.
+sudo -u $SUDO_USER
+
+do_oh_my_zsh
 download_dotfiles
 do_vundle_install
 do_vim_plugin_install
@@ -380,19 +382,9 @@ do_tmux_tpm
 do_tpm_plugin_install
 do_vim_colorscheme_install
 
+do_home_bin_dir
 do_gdsf_install
 do_gdsf_config
 do_fzf_install
 do_z_install
 do_zshsh_install
-
-install_pkg i3
-install_pkg rofi
-install_pkg feh
-install_pkg conky
-install_pkg compton
-install_pkg i3status
-install_pkg cmus
-
-do_make_i3_default
-# do_install_blockscripts
