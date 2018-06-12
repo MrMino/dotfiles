@@ -4,7 +4,7 @@ LOG_PATH=/tmp/postlog
 TMUX_CONF_URL=https://raw.githubusercontent.com/MrMino/dotfiles/unify/.tmux.conf
 ZSHRC_URL=https://raw.githubusercontent.com/MrMino/dotfiles/unify/.zshrc
 VIMRC_URL=https://raw.githubusercontent.com/MrMino/dotfiles/unify/.vimrc
-VIM_COLORSCHEME_URL=https://raw.githubusercontent.com/MrMino/dotfiles/unify/.vim/colors/brighton_modified.vim
+VIM_COLORSCHEME_URL=https://raw.githubusercontent.com/MrMino/dotfiles/vim/.vim/colors/brighton_modified.vim
 DOTFILES_REPO_URL=https://github.com/MrMino/dotfiles.git
 
 function log_msg {
