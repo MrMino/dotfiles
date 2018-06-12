@@ -1,10 +1,6 @@
 #!/bin/bash
 
 LOG_PATH=/tmp/postlog
-TMUX_CONF_URL=https://raw.githubusercontent.com/MrMino/dotfiles/unify/.tmux.conf
-ZSHRC_URL=https://raw.githubusercontent.com/MrMino/dotfiles/unify/.zshrc
-VIMRC_URL=https://raw.githubusercontent.com/MrMino/dotfiles/unify/.vimrc
-VIM_COLORSCHEME_URL=https://raw.githubusercontent.com/MrMino/dotfiles/vim/.vim/colors/brighton_modified.vim
 DOTFILES_REPO_URL=https://github.com/MrMino/dotfiles.git
 
 function log_msg {
@@ -111,15 +107,6 @@ function do_tmux_chsh {
     sudo usermod --shell $tmux_path $current_user &>> $LOG_PATH
 }
 
-function do_tmux_conf {
-    log_msg
-    log_msg "Downloading \".tmux.conf\"."
-    if ! wget -O .tmux.conf $TMUX_CONF_URL &>> $LOG_PATH ; then
-        log_msg "Error: downloading \".tmux.conf\" failed."
-        exit 4
-    fi
-}
-
 function do_tmux_tpm {
     log_msg
     log_msg "Installing tmux plugin manager (TPM)."
@@ -173,18 +160,6 @@ function do_oh_my_zsh {
     log_msg "Removing \".zshrc.pre-oh-my-zsh\"."
     rm ".zshrc.pre-oh-my-zsh" &>> $LOG_PATH
     log_msg "Oh-my-zsh Installation done."
-}
-
-function do_zshrc {
-# TODO: make it check for the existance of the file first.
-# TODO: if file exists, rm it
-# TODO: refactorize this and .tmux.conf func
-    log_msg
-    log_msg "Downloading \".zshrc\"."
-    if ! wget -O .zshrc $ZSHRC_URL &>> $LOG_PATH ; then
-        log_msg "Error: downloading \".zshrc\" failed."
-        exit 10
-    fi
 }
 
 function do_home_bin_dir {
@@ -245,18 +220,6 @@ function do_zshsh_install {
         exit 16
     else
         log_msg "Finished downloading zsh-syntax-highlighting."
-    fi
-}
-
-function do_vimrc {
-# TODO: make it check for the existance of the file first.
-# TODO: if file exists, rm it
-# TODO: refactorize this and .tmux.conf func
-    log_msg
-    log_msg "Downloading \".vimrc\"."
-    if ! wget -O .vimrc $VIMRC_URL &>> $LOG_PATH ; then
-        log_msg "Error: downloading \".vimrc\" failed."
-        exit 17
     fi
 }
 
@@ -336,40 +299,27 @@ function do_make_i3_default {
     sed -i 's/XSession=.*/XSession=i3/' $session_file
 }
 
-# TODO do we really need this?
-function do_install_blockscripts {
-    blockscripts_url=https://github.com/Anachron/i3blocks.git
-    blockscripts_dir=~/.bin/blockscripts
-	log_msg "Downloading blockscripts."
-    if [ -d $blockscripts_dir ]; then
-        log_msg "Blockscripts directory (\"$blockscripts_dir\") already exists. Skipping."
-	return 0
-    elif ! git clone $blockscripts_url $blockscripts_dir &>> $LOG_PATH; then
-        log_msg "Error: blockscripts downloading failed."
-        exit 21
-    else
-        log_msg "Finished downloading blockscripts."
-    fi
-}
-
-function do_download_i3_config {
-	log_msg "Downloading i3 config."
+function download_dotfiles {
+	log_msg
 	dotfiles_dir=/tmp/dotfiles
-
-	if ! git clone $DOTFILES_REPO_URL $dotfiles_dir --branch unify &>> $LOG_PATH
-	then
-		log_msg "Cloning dotfiles repo failed."
-		exit 22
+    if [ -d $dotfiles_dir ]; then
+		log_msg "Dotfiles dir (\"$dotfiles_dir\") already exists."
+		log_msg "Updating the contents."
+		cd $dotfiles_dir
+        git pull &>> $LOG_PATH
+		cd -
+	else
+		log_msg "Downloading dotfiles to \"$dotfiles_dir\"."
+		if ! git clone $DOTFILES_REPO_URL $dotfiles_dir \
+                --branch unify &>> $LOG_PATH
+		then
+			log_msg "Failed to clone dotfiles repository."
+			exit 21
+		fi
 	fi
 
-	if [ -d ~/.i3 ]; then
-		log_msg "Warning: ~/.i3 already exists. Removing."
-		rm -rf ~/.i3 &>> $LOG_PATH
-	fi
-	mv $dotfiles_dir/.i3 ~/.i3
-	rm -rf $dotfiles_dir &>> $LOG_PATH
-
-	log_msg "Done downloading i3 config."
+	log_msg "Moving dotfiles to the home directory."
+	mv $dotfiles_dir/.* ~/
 }
 
 cd ~
@@ -392,16 +342,14 @@ install_pkg python-dev
 install_pkg python3-dev
 # install_pkg swi-prolog
 
-do_pip2n3_upgrade 
+do_pip2n3_upgrade
 do_tmux_chsh
-do_tmux_conf
 do_tmux_tpm
 
 install_pip3_pkg powerline-status
 install_pkg fonts-powerline
 
 do_oh_my_zsh
-do_zshrc
 do_home_bin_dir
 do_fzf_install
 do_z_install
@@ -419,7 +367,6 @@ install_pip3_pkg pygments
 
 do_vim_colorscheme_install
 do_vundle_install
-do_vimrc
 do_vim_plugin_install
 do_ycm_install
 do_gdsf_install
@@ -434,5 +381,4 @@ install_pkg i3status
 install_pkg cmus
 
 do_make_i3_default
-do_download_i3_config
 # do_install_blockscripts
