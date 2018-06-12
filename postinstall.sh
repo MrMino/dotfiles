@@ -309,22 +309,29 @@ function download_dotfiles {
 	dotfiles_dir=/tmp/dotfiles
     if [ -d $dotfiles_dir ]; then
 		log_msg "Dotfiles dir (\"$dotfiles_dir\") already exists."
-		log_msg "Updating the contents."
-		cd $dotfiles_dir
-        git pull &>> $LOG_PATH
-		cd -
-	else
-		log_msg "Downloading dotfiles to \"$dotfiles_dir\"."
-		if ! git clone $DOTFILES_REPO_URL $dotfiles_dir \
-                --branch unify &>> $LOG_PATH
-		then
-			log_msg "Failed to clone dotfiles repository."
-			exit 21
-		fi
+		log_msg "Removing"
+		rm -rf $dotfiles_dir
+	fi
+
+	log_msg "Downloading dotfiles to \"$dotfiles_dir\"."
+	if ! git clone $DOTFILES_REPO_URL $dotfiles_dir \
+			--branch unify &>> $LOG_PATH
+	then
+		log_msg "Failed to clone dotfiles repository."
+		exit 21
 	fi
 
 	log_msg "Moving dotfiles to the home directory."
-	mv $dotfiles_dir/.* ~/
+	mv $dotfiles_dir/.i3/* ~/.i3/ -f &>> $LOG_PATH
+	mv $dotfiles_dir/.zshrc ~/.zshrc &>> $LOG_PATH
+	mv $dotfiles_dir/.vimrc ~/.vimrc &>> $LOG_PATH
+	mv $dotfiles_dir/.tmux.conf ~/.tmux.conf &>> $LOG_PATH
+	mv $dotfiles_dir/.git ~/.git &>> $LOG_PATH
+	mv $dotfiles_dir/.gitignore ~/.gitignore &>> $LOG_PATH
+	mv $dotfiles_dir/.gitconfig ~/.gitconfig &>> $LOG_PATH
+
+	chown -R $SUDO_USER:$SUDO_USER ~/.i3 ~/.zshrc ~/.vimrc\
+        ~/.tmux.conf ~/.git ~/.gitconfig ~/.gitignore &>> $LOG_PATH
 }
 
 cd ~
