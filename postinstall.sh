@@ -118,9 +118,12 @@ function do_tmux_tpm {
         log_msg "Error: TPM downloading failed." 
         exit 7
     else
-        log_msg "Download done, running plugin installation."
+        log_msg "Download done."
     fi
+}
 
+function do_tpm_plugin_install {
+	log_msg "Installing tmux plugins via tpm."
     if ! ~/.tmux/plugins/tpm/scripts/install_plugins.sh &>>$LOG_PATH; then
         log_msg "Plugin installation failed."
         exit 8
@@ -344,17 +347,12 @@ install_pkg python3-dev
 
 do_pip2n3_upgrade
 do_tmux_chsh
-do_tmux_tpm
 
 install_pip3_pkg powerline-status
 install_pkg fonts-powerline
 
 do_oh_my_zsh
 do_home_bin_dir
-do_fzf_install
-do_z_install
-do_zshsh_install
-
 chown $SUDO_USER ~/.zsh_history
 
 install_pkg xclip
@@ -365,12 +363,19 @@ install_pip3_pkg ipython
 install_pip3_pkg ipdb
 install_pip3_pkg pygments
 
-do_vim_colorscheme_install
+download_dotfiles
 do_vundle_install
 do_vim_plugin_install
 do_ycm_install
+do_tmux_tpm
+do_tpm_plugin_install
+do_vim_colorscheme_install
+
 do_gdsf_install
 do_gdsf_config
+do_fzf_install
+do_z_install
+do_zshsh_install
 
 install_pkg i3
 install_pkg rofi
