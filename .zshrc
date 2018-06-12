@@ -128,9 +128,8 @@ export LESSOPEN='|pygmentize %s'
 # Pygmentized cat
 alias pcat='pygmentize -O style=monokai -f terminal -g'
 
-# Better do it before something goes terribly wrong
 # Disable rm 
-alias rm='echo "rm is disabled, use trash or /bin/rm instead."'
+#alias rm='echo "rm is disabled, use trash or /bin/rm instead."'
 
 # Virtualenvwrapper support
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
