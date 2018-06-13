@@ -164,6 +164,8 @@ install_pip3_pkg powerline-status
 
 do_make_i3_default
 
+timedatectl set-local-rtc 1 --adjust-system-clock &>> $LOG_PATH
+
 # Get back from root privileges - we dont want to populate home
 # with root owned files.
 sudo -u $SUDO_USER ./_no_sudo.sh $LOG_PATH
