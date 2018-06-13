@@ -3,4 +3,4 @@
     wget https://raw.githubusercontent.com/MrMino/dotfiles/postinstall/_no_sudo.sh
     chmod +x postinstall.sh
     chmod +x _no_sudo.sh
-    sudo ./postinstall.sh
+    time sudo ./postinstall.sh
