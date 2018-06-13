@@ -1,12 +1,13 @@
 #!/bin/bash
 
 LOG_PATH=$1
+DOTFILES_REPO_URL=https://github.com/MrMino/dotfiles.git
+VIM_COLORSCHEME_URL=https://raw.githubusercontent.com/MrMino/dotfiles/vim/.vim/colors/brighton_modified.vim
 
 function log_msg {
     echo -e $@ >> $LOG_PATH
     echo -e $@
 }
-
 
 function do_oh_my_zsh {
     log_msg "Instaling oh-my-zsh."
