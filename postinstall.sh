@@ -20,7 +20,7 @@ function install_pkg {
 
 function install_pip3_pkg {
     log_msg -n "Installing (via pip3) \"$1\".."
-    if ! pip3 install $@ &>> $LOG_PATH; then
+    if ! python3 -m pip install -vvv $@ &>> $LOG_PATH; then
         log_msg "Error: pip3 install failed."
         exit 9
     fi
