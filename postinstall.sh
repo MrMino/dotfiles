@@ -145,9 +145,10 @@ install_pkg rofi
 install_pkg feh
 install_pkg conky
 install_pkg compton
-install_pkg i3status
+install_pkg i3blocks
 install_pkg cmus
 install_pkg fonts-powerline
+install_pkg fonts-font-awesome
 install_pkg python3-pip
 install_pkg python-dev
 install_pkg python3-dev
