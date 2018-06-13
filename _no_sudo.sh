@@ -224,12 +224,16 @@ cd ~
 
 do_oh_my_zsh
 download_dotfiles
+
 do_vundle_install
+do_vim_colorscheme_install
 do_vim_plugin_install
 do_ycm_install
 do_tmux_tpm
+
+# Reload config, for tpm.
+tmux source-file ~/.tmux.conf
 do_tpm_plugin_install
-do_vim_colorscheme_install
 
 do_home_bin_dir
 do_gdsf_install

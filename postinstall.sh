@@ -157,8 +157,9 @@ install_pip3_pkg pygments
 install_pip3_pkg powerline-status
 
 do_make_i3_default
-do_tmux_chsh
 
 # Get back from root privileges - we dont want to populate home
 # with root owned files.
 sudo -u $SUDO_USER ./_no_sudo.sh $LOG_PATH
+
+do_tmux_chsh
