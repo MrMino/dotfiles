@@ -20,7 +20,7 @@ function install_pkg {
 
 function install_pip3_pkg {
     log_msg -n "Installing (via pip3) \"$1\".."
-    if ! pip install $@ &>> $LOG_PATH; then
+    if ! pip3 install $@ &>> $LOG_PATH; then
         log_msg "Error: pip3 install failed."
         exit 9
     fi
@@ -130,6 +130,11 @@ do_sanity_checks
 do_update_upgrade
 do_broadcom_card_setup
 
+install_pkg python3-pip
+install_pkg python-dev
+install_pkg python3-dev
+install_pkg python-pip
+do_pip2n3_upgrade
 install_pkg git
 install_pkg curl
 install_pkg vim-gtk3
@@ -149,11 +154,7 @@ install_pkg i3blocks
 install_pkg cmus
 install_pkg fonts-powerline
 install_pkg fonts-font-awesome
-install_pkg python3-pip
-install_pkg python-dev
-install_pkg python3-dev
-install_pkg python-pip
-do_pip2n3_upgrade
+
 install_pip3_pkg virtualenv
 install_pip3_pkg virtualenvwrapper
 install_pip3_pkg ipython
