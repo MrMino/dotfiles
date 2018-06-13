@@ -4,10 +4,8 @@
 # But not these files...
 !*.vimrc
 !*.vim
-!*.bashrc
 !*.zshrc
 !*.tmux.conf
 !bin/
-!*.gitconfig
 !.gitignore
 !*config
