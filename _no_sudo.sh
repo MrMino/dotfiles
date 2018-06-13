@@ -211,11 +211,11 @@ function download_dotfiles {
 	fi
 
 	log_msg "Moving dotfiles to the home directory."
-	mv $dotfiles_dir/.i3/* ~/.i3/ -f &>> $LOG_PATH
+	mv $dotfiles_dir/.i3 ~/.i3 -f &>> $LOG_PATH
 	mv $dotfiles_dir/.zshrc ~/.zshrc &>> $LOG_PATH
 	mv $dotfiles_dir/.vimrc ~/.vimrc &>> $LOG_PATH
 	mv $dotfiles_dir/.tmux.conf ~/.tmux.conf &>> $LOG_PATH
-	mv $dotfiles_dir/.git ~/.git &>> $LOG_PATH
+	mv $dotfiles_dir/.git ~/.git -f &>> $LOG_PATH
 	mv $dotfiles_dir/.gitignore ~/.gitignore &>> $LOG_PATH
 	mv $dotfiles_dir/.gitconfig ~/.gitconfig &>> $LOG_PATH
 }
