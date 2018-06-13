@@ -80,7 +80,7 @@ function do_pip2n3_upgrade {
         log_msg "Error: pip2 upgrade failed."
         exit 5
     fi
-    if !pip3 install --upgrade pip &>>$LOG_PATH; then
+    if ! pip3 install --upgrade pip &>>$LOG_PATH; then
         log_msg "Error: pip3 upgrade failed."
         exit 6
     fi
