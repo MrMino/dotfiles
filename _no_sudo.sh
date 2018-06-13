@@ -30,7 +30,9 @@ function do_oh_my_zsh {
     fi
 
     # Make the install script *not* run zsh at the end.
-    oh_my_zsh_script="$(echo "$oh_my_zsh_script" | sed '/env zsh/d')"
+    oh_my_zsh_script="$(echo "$oh_my_zsh_script" | sed '/env zsh/d' | \
+	    sed '/chsh -s/d')"
+    echo "$oh_my_zsh_script" &>> $LOG_PATH
 
     if ! sh -c "$oh_my_zsh_script" &>> $LOG_PATH
     then
