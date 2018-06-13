@@ -122,6 +122,10 @@ function do_make_i3_default {
     sed -i 's/XSession=.*/XSession=i3/' $session_file
 }
 
+# Empty, chown the logs
+echo > $LOG_PATH
+chown $SUDO_USER $LOG_PATH
+
 do_sanity_checks
 do_update_upgrade
 do_broadcom_card_setup
