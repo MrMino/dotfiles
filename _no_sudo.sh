@@ -220,6 +220,7 @@ function download_dotfiles {
 	mv $dotfiles_dir/.git ~/.git -f &>> $LOG_PATH
 	mv $dotfiles_dir/.gitignore ~/.gitignore &>> $LOG_PATH
 	mv $dotfiles_dir/.gitconfig ~/.gitconfig &>> $LOG_PATH
+	mv $dotfiles_dir/.screenlayout ~/ -f &>> $LOG_PATH
 }
 
 cd ~
