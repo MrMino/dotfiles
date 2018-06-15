@@ -142,6 +142,7 @@ install_pkg zsh
 install_pkg tmux
 install_pkg cmake
 install_pkg build-essential
+install_pkg tree
 # install_pkg swi-prolog
 install_pkg xclip
 install_pkg trash-cli
