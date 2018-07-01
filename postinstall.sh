@@ -160,6 +160,7 @@ install_pip3_pkg virtualenv
 install_pip3_pkg virtualenvwrapper
 install_pip3_pkg ipython
 install_pip3_pkg ipdb
+install_pip3_pkg flake8
 install_pip3_pkg pygments
 install_pip3_pkg powerline-status
 
