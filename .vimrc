@@ -109,6 +109,9 @@ set timeoutlen=1000 ttimeoutlen=0
 " Make scrolling distance out from bottom
 set scrolloff=10
 
+" Persistent undo
+set undofile
+
 
 """""""""""""""""""
 " Plugin behavior "
