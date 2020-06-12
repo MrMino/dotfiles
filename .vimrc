@@ -173,8 +173,8 @@ set cursorline
 " Selection colors fix
 set background=dark
 
-" Show where the 80th column is
-set colorcolumn=80
+" Show where the 81th column is
+set colorcolumn=81
 highlight ColorColumn ctermbg=darkgray
 
 " Better color scheme
