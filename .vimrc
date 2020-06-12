@@ -157,7 +157,7 @@ let g:NERDTreeClose="<F2>"
 " Close NERDTree after opening of a file
 let NERDTreeQuitOnOpen=1
 " Ignored files
-let NERDTreeIgnore=['\.pyc$', '\~$', '__pycache__'] "ignore files in NERDTree
+let NERDTreeIgnore=['\.pyc$', '\~$', '__pycache__', '\.o$', '^a\.out$']
 " Make ctrlp work vith NERD
 let g:NERDTreeChDirMode       = 2
 let g:ctrlp_working_path_mode = 'rw'
