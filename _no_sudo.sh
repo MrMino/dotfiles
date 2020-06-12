@@ -205,8 +205,7 @@ function download_dotfiles {
 	fi
 
 	log_msg "Downloading dotfiles to \"$dotfiles_dir\"."
-	if ! git clone $DOTFILES_REPO_URL $dotfiles_dir \
-			--branch unify &>> $LOG_PATH
+	if ! git clone $DOTFILES_REPO_URL $dotfiles_dir &>> $LOG_PATH
 	then
 		log_msg "Failed to clone dotfiles repository."
 		exit 21
