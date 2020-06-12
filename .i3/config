@@ -130,6 +130,9 @@ bindsym $mod+Shift+r restart
 # Bringup the rofi shutdown menu
 bindsym $mod+Shift+e exec ~/.i3/shutdown_menu
 
+# Rofi menu with emojis
+bindsym $mod+backslash exec rofimoji
+
 # Resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
