@@ -162,6 +162,7 @@ let NERDTreeIgnore=['\.pyc$', '\~$', '__pycache__', '\.o$', '^a\.out$']
 let g:NERDTreeChDirMode       = 2
 let g:ctrlp_working_path_mode = 'rw'
 
+
 """"""""""""""""""
 """ Appearnace """
 """"""""""""""""""
