@@ -228,3 +228,8 @@ exec --no-startup-id "sleep 1; conky -c ~/.i3/Gotham-widget"
 
 # Rice up the desktop with compton
 exec --no-startup-id "compton -D 5 -f -b"
+
+# Nobody:
+# MS Teams: lOOk aT My nOTiFiCation
+#
+for_window [title="Microsoft Teams Notification" class="Microsoft Teams - Preview"] floating enable, resize set 301 200
