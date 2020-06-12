@@ -174,6 +174,9 @@ source /usr/local/bin/virtualenvwrapper_lazy.sh
 # ZSH syntax highliting - keep this always at the end (before zprof)
 source $SCRIPT_BIN/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+# Make python>=3.7 run ipdb at breakpoint()
+export PYTHONBREAKPOINT=ipdb.set_trace
+
 # (MrM) This should be always at the end.
 # (MrM) Uncomment this as well as the first line in this file to use startup 
 # (MrM) profiler
