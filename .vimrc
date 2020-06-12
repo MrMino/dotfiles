@@ -271,6 +271,12 @@ silent! map <F2> :NERDTreeToggle<CR>
 " Go to definition / declaration
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
+" ALE
+" Navigate between errors / warns
+nmap <silent> H <Plug>(ale_previous_wrap)
+nmap <silent> L <Plug>(ale_next_wrap)
+
+
 
 """""""""""""""""""""""""
 """	Tabulation config """
