@@ -309,7 +309,7 @@ set shiftwidth=4 |
 """ Per-filetype preferences """
 """"""""""""""""""""""""""""""""
 
-au BufNewFile,BufRead *.js,*.html,*.css,*.robot,*.py,*.c,*.jl
+au BufNewFile,BufRead *.js,*.html,*.css,*.robot,*.py,*.c,*.jl,*.groovy,*.json,*.md
     \ set expandtab |
     \ set autoindent
 
@@ -325,6 +325,14 @@ au BufNewFile,BufRead *.pl
 
 au BufNewFile,BufRead *.robot
     \ setf robot
+
+au BufNewFile,BufRead *.c,*.h
+    \ set textwidth=79 |
+    \ set fileformat=unix |
+    \ set cindent |
+
+au BufWrite *.c,*.h
+    \ :Autoformat
 
 " Find trailing whitespaces 
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
