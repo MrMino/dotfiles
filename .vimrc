@@ -141,7 +141,7 @@ highlight Pmenu ctermfg=lightgray ctermbg=darkgray guifg=#ffffff guibg=#000000
 " ALE
 " Set syntax linters
 let g:ale_linters = {
-\   'python': ['flake8'],
+\   'python': ['flake8', 'pycodestyle'],
 \}
 
 " UltiSnips
