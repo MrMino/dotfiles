@@ -286,6 +286,9 @@ noremap <F4> :Autoformat<CR>
 let g:UltiSnipsExpandTrigger="<F5>"
 let g:UltiSnipsJumpForwardTrigger="<c-s>"
 
+" Codi
+noremap <F6> :Codi!! python<CR>
+
 
 """""""""""""""""""""""""
 """	Tabulation config """
