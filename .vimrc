@@ -145,10 +145,6 @@ let g:ale_linters = {
 \}
 
 " UltiSnips
-" Trigger configuration.
-" Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="<f5>"
-let g:UltiSnipsJumpForwardTrigger="<c-s>"
 " let g:UltiSnipsJumpBackwardTrigger="<c-b>"
 " Make :UltiSnipsEdit to split current window.
 let g:UltiSnipsEditSplit="vertical"
