@@ -204,9 +204,6 @@ exec --no-startup-id "~/.screenlayout/default.sh"
 # Make capslock an additional escape key
 exec --no-startup-id "setxkbmap -option caps:escape"
 
-# Use some gnome settings
-exec --no-startup-id gnome-settings-daemon
-
 # Layout colors           bord    bg      text 
 client.focused            #000000 #000000 #FFA300 #4F4F4F
 client.focused_inactive   #1A1A1A #1A1A1A #424242 #121212
