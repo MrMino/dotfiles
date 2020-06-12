@@ -277,6 +277,8 @@ map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 nmap <silent> H <Plug>(ale_previous_wrap)
 nmap <silent> L <Plug>(ale_next_wrap)
 
+" Vim-autoformat
+noremap <F4> :Autoformat<CR>
 
 
 """""""""""""""""""""""""
