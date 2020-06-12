@@ -36,6 +36,9 @@ bindsym $mod+d exec rofi -show run -lines 9 -eh 2 -width 100 -padding 345 \
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
+# Start doc browser (Zeal)
+bindsym $mod+shift+d exec "query=$(rofi -dmenu -theme Pop-Dark -lines 0 -p Docs) && zeal $query"
+
 # Start window switcher (win+`)
 bindsym mod4+grave exec rofi -show window -auto-select
 
