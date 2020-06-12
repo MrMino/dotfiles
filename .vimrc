@@ -129,6 +129,8 @@ let g:SimpylFold_docstring_preview=1
 " YouCompleteMe
 " Make YouCompleteMe close documentation automatically
 let g:ycm_autoclose_preview_window_after_completion=1
+" Globabl extra conf
+let g:ycm_global_ycm_extra_conf = '/home/mrmino/.ycm_extra_conf.py'
 " Disable YouCompleteMe docstrings previews at entering a completion
 set completeopt-=preview
 " Completion submenu colors
