@@ -112,6 +112,11 @@ set scrolloff=10
 " Persistent undo
 set undofile
 
+" Undo/backup/swap files in their own dirs
+set backupdir=~/.vim/backupfiles
+set directory=~/.vim/swapfiles
+set undodir=~/.vim/undofiles
+
 
 """""""""""""""""""
 " Plugin behavior "
