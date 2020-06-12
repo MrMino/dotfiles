@@ -280,6 +280,12 @@ nmap <silent> L <Plug>(ale_next_wrap)
 " Vim-autoformat
 noremap <F4> :Autoformat<CR>
 
+" UltiSnips
+" Trigger configuration.
+" Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<F5>"
+let g:UltiSnipsJumpForwardTrigger="<c-s>"
+
 
 """""""""""""""""""""""""
 """	Tabulation config """
