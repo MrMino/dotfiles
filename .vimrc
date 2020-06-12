@@ -17,35 +17,57 @@ Plugin 'gmarik/Vundle.vim'
 
 " Add all your plugins here
 " (note older versions of Vundle used Bundle instead of Plugin)
-Plugin 'JuliaEditorSupport/julia-vim'
 Plugin 'w0rp/ale'
-Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/nerdtree'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tmhedberg/SimpylFold'
+Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'kien/ctrlp.vim'
 Plugin 'vim-scripts/indentpython.vim'
+Plugin 'tmhedberg/SimpylFold'
 Plugin 'chrisbra/Recover.vim'
 Plugin 'AndrewRadev/sideways.vim'
 Plugin 'justinmk/vim-syntax-extra'
-Plugin 'jistr/vim-nerdtree-tabs'
-Plugin 'Valloric/YouCompleteMe'
 Plugin 'elzr/vim-json'
-Plugin 'fatih/vim-go'
 Plugin 'mfukar/robotframework-vim'
 Plugin 'othree/xml.vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
-Plugin 'mxw/vim-prolog'
-
-" Plugin 'metakirby5/codi.vim' " - Can't get this to work now, though it is
-                               " pure gold
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-commentary'
+Plugin 'inkarkat/vim-ReplaceWithRegister'
+Plugin 'Chiel92/vim-autoformat'
+Plugin 'metakirby5/codi.vim'
 
 " All of your Plugins must be added before the following lines
 call vundle#end()
 "
 " Reenable filetype
 filetype plugin indent on
+
+
+"""""""""""""""""""""""""
+""" Plugin graveyard  """
+"""""""""""""""""""""""""
+" Uses some weird proprietary crap to run python debuger
+" Maybe we could implement a dbgp protocol for ipdb?
+" Plugin 'vim-vdebug/vdebug'
+
+" Brighton is still much better, especially after fixing Pmenu artifacts
+" Plugin 'altercation/vim-colors-solarized'
+
+" Never helped much, I don't use tabs
+" Plugin 'jistr/vim-nerdtree-tabs'
+
+" They say its cool, but I don't really see use for it
+" Plugin 'tpope/vim-fugitive'
+
+" Makes '<motion>c' laggy as...
+" Plugin 'christoomey/vim-system-copy'
+
+" Not using these languages right now
+" Plugin 'mxw/vim-prolog'
+" Plugin 'fatih/vim-go'
+" Plugin 'JuliaEditorSupport/julia-vim'
 
 
 """"""""""""""""""""""
