@@ -89,6 +89,40 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+alias nokiavpn="
+    cd ~/certs
+    sudo openconnect -v \
+	     -u blazej.michalik@nokia.com \
+		 -k michalik.ipa.nsn-net.net.key \
+		 -c michalik.ipa.nsn-net.net.crt \
+		 --no-proxy \
+		 nra-emea-fi-esp-vip.net.nokia.com
+	popd
+"
+alias show_proxy="env | grep -i _proxy"
+alias unproxy="unset \$(show_proxy | cut -d= -f1)"
+alias proxify="
+export ftp_proxy=http://10.144.1.10:8080/
+export http_proxy=http://10.144.1.10:8080/
+export https_proxy=http://10.144.1.10:8080/
+
+export no_proxy=\
+localhost,127.0.0.0/8,*.local,\
+nsn-net.net,\
+inside.nokiasiemensnetworks.com,\
+access.nokiasiemensnetworks.com,\
+nsn-intra.net,\
+nsn-rdnet.net,\
+ext.net.nokia.com
+
+export FTP_PROXY=$ftp_proxy
+export HTTP_PROXY=$http_proxy
+export HTTPS_PROXY=$https_proxy
+export NO_PROXY=$no_proxy
+"
+
+alias chrome-noproxy="ftp_proxy= http_proxy= https_proxy= google-chrome & disown"
+
 #Add $DEFAULT_USER, so zsh themes won't clutter up the prompt
 DEFAULT_USER="mrmino"
 
