@@ -177,6 +177,13 @@ source $SCRIPT_BIN/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # Make python>=3.7 run ipdb at breakpoint()
 export PYTHONBREAKPOINT=ipdb.set_trace
 
+# Pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+
 # (MrM) This should be always at the end.
 # (MrM) Uncomment this as well as the first line in this file to use startup 
 # (MrM) profiler
