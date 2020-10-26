@@ -37,6 +37,9 @@ Plugin 'tpope/vim-commentary'
 Plugin 'inkarkat/vim-ReplaceWithRegister'
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'metakirby5/codi.vim'
+Plugin 'simnalamburt/vim-mundo'
+Plugin 'preservim/tagbar'
+
 
 " All of your Plugins must be added before the following lines
 call vundle#end()
@@ -117,6 +120,9 @@ set backupdir=~/.vim/backupfiles
 set directory=~/.vim/swapfiles
 set undodir=~/.vim/undofiles
 
+" Make mouse mode work under tmux
+set ttymouse=xterm2
+
 
 """""""""""""""""""
 " Plugin behavior "
@@ -161,6 +167,10 @@ let NERDTreeIgnore=['\.pyc$', '\~$', '__pycache__', '\.o$', '^a\.out$']
 " Make ctrlp work vith NERD
 let g:NERDTreeChDirMode       = 2
 let g:ctrlp_working_path_mode = 'rw'
+
+" Tagbar
+" Open on the left side
+let g:tagbar_position = 'botright vertical'
 
 
 """"""""""""""""""
@@ -288,6 +298,12 @@ let g:UltiSnipsJumpForwardTrigger="<c-s>"
 
 " Codi
 noremap <F6> :Codi!! python<CR>
+
+" Mundo (undo tree)
+nnoremap <F7> :MundoToggle<CR>
+
+" Tagbar
+noremap <F8> :TagbarOpenAutoClose<CR>
 
 
 """""""""""""""""""""""""
