@@ -173,7 +173,6 @@ install_pkg fonts-powerline
 install_pkg fonts-font-awesome
 install_pkg build-essential
 install_pkg htop
-install_pkg docker.io
 install_pkg xdotool
 install_pkg gparted
 install_pkg entr
