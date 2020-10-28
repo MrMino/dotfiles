@@ -179,6 +179,7 @@ install_pkg gparted
 install_pkg entr
 install_pkg dos2unix
 install_pkg cifs-utils
+install_pkg vagrant
 
 # Proprietary stuff + packages supporting that
 install_pkg teams
@@ -187,7 +188,6 @@ install_pkg google-chrome-stable
 install_pkg containerd.io
 install_pkg docker-ce
 install_pkg docker-cli
-
 
 install_pip3_pkg virtualenv
 install_pip3_pkg virtualenvwrapper
