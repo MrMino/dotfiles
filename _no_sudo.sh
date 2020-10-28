@@ -29,11 +29,8 @@ function do_oh_my_zsh {
         log_msg "MD5 sum correct."
     fi
 
-    # Make the install script *not* run zsh at the end.
-    oh_my_zsh_script="$(echo "$oh_my_zsh_script" | sed '/env zsh/d' | \
-	    sed '/chsh -s/d')"
-    echo "$oh_my_zsh_script" &>> $LOG_PATH
-
+    export RUNZSH=no
+    export CHSH=no
     if ! sh -c "$oh_my_zsh_script" &>> $LOG_PATH
     then
         log_msg "Error: oh-my-zsh installation failed."
