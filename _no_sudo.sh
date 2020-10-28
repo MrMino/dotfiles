@@ -228,6 +228,11 @@ function download_dotfiles {
 	mv $dotfiles_dir/.screenlayout ~/ -f &>> $LOG_PATH
 }
 
+function do_pyenv_install {
+	log_msg "Installing pyenv"
+	wget -q -O - https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
+}
+
 cd ~
 
 do_oh_my_zsh
@@ -250,3 +255,4 @@ do_gdsf_config
 do_fzf_install
 do_z_install
 do_zshsh_install
+do_pyenv_install
