@@ -131,7 +131,7 @@ function add_external_apt_keys_and_repos {
 	wget -q -O - https://download.spotify.com/debian/pubkey.gpg | sudo apt-key add -
 	wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
 	wget -q -O - https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
-	wget -a -O - https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+	wget -q -O - https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 
 	log_msg "Adding apt repos for proprietary apps."
 	echo "deb http://repository.spotify.com stable non-free" > /etc/apt/sources.list.d/spotify.list
