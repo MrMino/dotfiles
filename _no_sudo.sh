@@ -120,6 +120,12 @@ function do_vundle_install {
     fi
 }
 
+function do_vim_directories {
+	mkdir ~/.vim/$(grep directory ~/.vimrc | cut -d= -f2)
+	mkdir ~/.vim/$(grep backupdir ~/.vimrc | cut -d= -f2)
+	mkdir ~/.vim/$(grep undodir ~/.vimrc | cut -d= -f2)
+}
+
 function do_vim_plugin_install {
     log_msg "Calling vim: PluginInstall."
     vim -c 'PluginInstall' -c 'q' -c 'q'
@@ -228,6 +234,7 @@ do_oh_my_zsh
 download_dotfiles
 
 do_vundle_install
+do_vim_directories
 do_vim_colorscheme_install
 do_vim_plugin_install
 do_ycm_install
