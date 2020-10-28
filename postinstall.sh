@@ -183,10 +183,11 @@ install_pkg cifs-utils
 # Proprietary stuff + packages supporting that
 install_pkg teams
 install_pkg spotify-client
-install_pkg chrome-stable
+install_pkg google-chrome-stable
 install_pkg containerd.io
 install_pkg docker-ce
 install_pkg docker-cli
+
 
 install_pip3_pkg virtualenv
 install_pip3_pkg virtualenvwrapper
