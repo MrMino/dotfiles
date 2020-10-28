@@ -186,7 +186,7 @@ install_pkg spotify-client
 install_pkg google-chrome-stable
 install_pkg containerd.io
 install_pkg docker-ce
-install_pkg docker-cli
+install_pkg docker-ce-cli
 
 install_pip3_pkg virtualenv
 install_pip3_pkg virtualenvwrapper
