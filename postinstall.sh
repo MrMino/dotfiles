@@ -126,6 +126,21 @@ function do_make_i3_default {
 echo > $LOG_PATH
 chown $SUDO_USER $LOG_PATH
 
+function add_external_apt_keys_and_repos {
+	log_msg "Downloading & adding apt keys."
+	wget -q -O - https://download.spotify.com/debian/pubkey.gpg | sudo apt-key add -
+	wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+	wget -q -O - https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
+	wget -a -O - https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+
+	log_msg "Adding apt repos for proprietary apps."
+	echo "deb http://repository.spotify.com stable non-free" > /etc/apt/sources.list.d/spotify.list
+	echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google.list
+	echo "deb https://packages.microsoft.com/repos/ms-teams stable main" > /etc/apt/sources.list.d/ms-teams.list
+	echo "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" > /etc/apt/sources.list.d/docker-io.list
+}
+
+add_external_apt_keys_and_repos
 do_sanity_checks
 do_update_upgrade
 do_broadcom_card_setup
@@ -135,6 +150,7 @@ install_pkg python-dev
 install_pkg python3-dev
 install_pkg python-pip
 do_pip2n3_upgrade
+
 install_pkg git
 install_pkg curl
 install_pkg vim-gtk3
@@ -155,6 +171,14 @@ install_pkg i3blocks
 install_pkg cmus
 install_pkg fonts-powerline
 install_pkg fonts-font-awesome
+
+# Proprietary stuff + packages supporting that
+install_pkg teams
+install_pkg spotify-client
+install_pkg chrome-stable
+install_pkg containerd.io
+install_pkg docker-ce
+install_pkg docker-cli
 
 install_pip3_pkg virtualenv
 install_pip3_pkg virtualenvwrapper
