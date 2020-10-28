@@ -76,7 +76,7 @@ function do_broadcom_card_setup {
 function do_pip2n3_upgrade {
     log_msg
     log_msg "Upgrading pip and pip3 to latest versions."
-    if ! pip install --upgrade pip &>>$LOG_PATH; then
+    if ! pip2 install --upgrade pip &>>$LOG_PATH; then
         log_msg "Error: pip2 upgrade failed."
         exit 5
     fi
