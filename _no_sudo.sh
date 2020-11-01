@@ -253,3 +253,5 @@ do_fzf_install
 do_z_install
 do_zshsh_install
 do_pyenv_install
+
+cd ~; git checkout .
