@@ -231,7 +231,26 @@ function download_dotfiles {
 
 function do_pyenv_install {
     log_msg "Installing pyenv"
-    wget -q -O - https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash 2&>>$LOG_PATH
+    if ! pyenv_installation_script="$(wget -q -O - https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer)"; then
+        log_msg "Error: cannot download pyenv install script."
+        exit 11
+    fi
+
+    # Make sure we're not running something else
+    expected_md5="197f87459a08e94dbd4727a2e6fbf223  -"
+    if [ "$(echo $pyenv_installation_script | md5sum)" = "$expected_md5" ]
+    then
+        log_msg "Error: pyenv install script: wrong MD5 sum."
+        exit 12
+    else
+        log_msg "MD5 sum correct."
+    fi
+
+    if ! sh -c "$pyenv_installation_script" &>> $LOG_PATH
+    then
+        log_msg "Error: oh-my-zsh installation failed."
+        exit 9
+    fi
 }
 
 function do_rofimoji_install {
