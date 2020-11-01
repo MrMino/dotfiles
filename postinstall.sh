@@ -4,6 +4,7 @@ LOG_DIR=$(mktemp -d --suffix=postlog)
 LOG_PATH=$LOG_DIR/postlog
 DOTFILES_REPO_URL=https://github.com/MrMino/dotfiles.git
 VIM_COLORSCHEME_URL=https://raw.githubusercontent.com/MrMino/dotfiles/vim/.vim/colors/brighton_modified.vim
+HOME=/home/$SUDO_USER/
 
 function log_msg {
     echo -e $@ >> $LOG_PATH
