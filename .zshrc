@@ -59,6 +59,9 @@ plugins=(git tmux tmuxinator pip ssh-agent)
 
 # User configuration
 
+# Ensure history is shared on command execution
+setopt INC_APPEND_HISTORY
+
 # Path
 export PATH=$PATH:"/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
 
