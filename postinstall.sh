@@ -75,14 +75,10 @@ function do_broadcom_card_setup {
     log_msg
 }
 
-function do_pip2n3_upgrade {
+function do_pip_upgrade {
     log_msg
     log_msg "Upgrading pip and pip3 to latest versions."
-    if ! pip2 install --upgrade pip &>>$LOG_PATH; then
-        log_msg "Error: pip2 upgrade failed."
-        exit 5
-    fi
-    if ! pip3 install --upgrade pip &>>$LOG_PATH; then
+    if ! python3 -m pip install --upgrade pip &>>$LOG_PATH; then
         log_msg "Error: pip3 upgrade failed."
         exit 6
     fi
@@ -150,10 +146,9 @@ do_update_upgrade
 do_broadcom_card_setup
 
 install_pkg python3-pip
-install_pkg python-dev
+install_pkg python2-dev
 install_pkg python3-dev
-install_pkg python-pip
-do_pip2n3_upgrade
+do_pip_upgrade
 
 install_pkg git
 install_pkg curl
