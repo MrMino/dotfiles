@@ -179,6 +179,7 @@ install_pkg entr
 install_pkg dos2unix
 install_pkg cifs-utils
 install_pkg vagrant
+install_pkg pavucontrol
 
 # Proprietary stuff + packages supporting that
 install_pkg teams
