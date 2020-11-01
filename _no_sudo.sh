@@ -227,7 +227,7 @@ function download_dotfiles {
 
 function do_pyenv_install {
     log_msg "Installing pyenv"
-    wget -q -O - https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash 2>&1 >>$LOG_PATH
+    wget -q -O - https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash 2&>>$LOG_PATH
 }
 
 function do_rofimoji_install {
