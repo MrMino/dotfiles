@@ -121,6 +121,9 @@ function do_vim_directories {
     swapdir=$(grep directory= ~/.vimrc | cut -d= -f2)
     backupdir=$(grep backupdir= ~/.vimrc | cut -d= -f2)
     undodir=$(grep undodir= ~/.vimrc | cut -d= -f2)
+    swapdir="${swapdir/#\~/$HOME}"
+    backupdir="${backupdir/#\~/$HOME}"
+    undodir="${undodir/#\~/$HOME}"
     mkdir $swapdir $backupdir $undodir
 }
 
