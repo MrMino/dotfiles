@@ -1,6 +1,7 @@
 #!/bin/bash
 
-LOG_PATH=/tmp/postlog
+LOG_DIR=$(mktemp -d --suffix=postlog)
+LOG_PATH=$LOG_DIR/postlog
 DOTFILES_REPO_URL=https://github.com/MrMino/dotfiles.git
 VIM_COLORSCHEME_URL=https://raw.githubusercontent.com/MrMino/dotfiles/vim/.vim/colors/brighton_modified.vim
 
@@ -122,10 +123,6 @@ function do_make_i3_default {
     sed -i 's/XSession=.*/XSession=i3/' $session_file
 }
 
-# Empty, chown the logs
-echo > $LOG_PATH
-chown $SUDO_USER $LOG_PATH
-
 function add_external_apt_keys_and_repos {
 	log_msg "Downloading & adding apt keys."
 	wget -q -O - https://download.spotify.com/debian/pubkey.gpg | sudo apt-key add -
@@ -139,6 +136,12 @@ function add_external_apt_keys_and_repos {
 	echo "deb https://packages.microsoft.com/repos/ms-teams stable main" > /etc/apt/sources.list.d/ms-teams.list
 	echo "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" > /etc/apt/sources.list.d/docker-io.list
 }
+
+# Empty, chown the logs
+echo "LOGGING TO $LOG_PATH"
+echo > $LOG_PATH
+chmod -R 777 $LOG_DIR
+chown -R $SUDO_USER $LOG_DIR
 
 add_external_apt_keys_and_repos
 do_sanity_checks
