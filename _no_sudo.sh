@@ -118,9 +118,10 @@ function do_vundle_install {
 }
 
 function do_vim_directories {
-    mkdir $(grep directory= ~/.vimrc | cut -d= -f2)
-    mkdir $(grep backupdir= ~/.vimrc | cut -d= -f2)
-    mkdir $(grep undodir= ~/.vimrc | cut -d= -f2)
+    swapdir=$(grep directory= ~/.vimrc | cut -d= -f2)
+    backupdir=$(grep backupdir= ~/.vimrc | cut -d= -f2)
+    undodir=$(grep undodir= ~/.vimrc | cut -d= -f2)
+    mkdir $swapdir $backupdir $undodir
 }
 
 function do_vim_plugin_install {
