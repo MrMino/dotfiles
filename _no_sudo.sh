@@ -227,7 +227,7 @@ function download_dotfiles {
 
 function do_pyenv_install {
     log_msg "Installing pyenv"
-    wget -q -O - https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
+    wget -q -O - https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash 2>&1 >>$LOG_PATH
 }
 
 function do_rofimoji_install {
@@ -243,7 +243,7 @@ function do_rofimoji_install {
 
 function do_patched_powerline_fonts_install {
 	log_msg "Installing powerline-patched fonts."
-	git clone https://github.com/powerline/fonts.git
+	git clone -q https://github.com/powerline/fonts.git
 	cd fonts
 	bash ./install.sh
 	cd ..
