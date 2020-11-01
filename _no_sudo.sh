@@ -15,7 +15,7 @@ function do_oh_my_zsh {
 
 
     if ! oh_my_zsh_script="$(curl -fsSL $install_url)"; then
-	log_msg "Error: cannot download oh-my-zsh install script."
+        log_msg "Error: cannot download oh-my-zsh install script."
         exit 11
     fi
 
@@ -54,7 +54,7 @@ function do_fzf_install {
     log_msg "Installing fuzzy finder (FZF)."
     if [ -d $fzf_dir ]; then
         log_msg "FZF directory (\"$fzf_dir\") already exists. Skipping."
-	return 0
+        return 0
     elif ! git clone $fzf_url $fzf_dir &>>$LOG_PATH; then
         log_msg "Error: FZF downloading failed." 
         exit 13
@@ -78,7 +78,7 @@ function do_z_install {
     log_msg "Installing z-jump (Z)."
     if [ -d $z_dir ]; then
         log_msg "Z directory (\"$z_dir\") already exists. Skipping."
-	return 0
+        return 0
     elif ! git clone $z_url $z_dir &>>$LOG_PATH; then
         log_msg "Error: Z downloading failed." 
         exit 15
@@ -93,7 +93,7 @@ function do_zshsh_install {
     log_msg "Installing zsh-syntax-highlighting."
     if [ -d $zshsh_dir ]; then
         log_msg "Zsh-syntax-highlighting directory (\"$zshsh_dir\") already exists. Skipping."
-	return 0
+        return 0
     elif ! git clone $zshsh_url $zshsh_dir &>>$LOG_PATH; then
         log_msg "Error: zsh-syntax-highlighting downloading failed." 
         exit 16
@@ -108,7 +108,7 @@ function do_vundle_install {
     log_msg "Installing Vundle."
     if [ -d $vundle_dir ]; then
         log_msg "Vundle directory (\"$vundle_dir\") already exists. Skipping."
-	return 0
+        return 0
     elif ! git clone $vundle_url $vundle_dir &>>$LOG_PATH; then
         log_msg "Error: Vundle downloading failed." 
         exit 16
@@ -118,9 +118,9 @@ function do_vundle_install {
 }
 
 function do_vim_directories {
-	mkdir ~/.vim/$(grep directory ~/.vimrc | cut -d= -f2)
-	mkdir ~/.vim/$(grep backupdir ~/.vimrc | cut -d= -f2)
-	mkdir ~/.vim/$(grep undodir ~/.vimrc | cut -d= -f2)
+    mkdir ~/.vim/$(grep directory ~/.vimrc | cut -d= -f2)
+    mkdir ~/.vim/$(grep backupdir ~/.vimrc | cut -d= -f2)
+    mkdir ~/.vim/$(grep undodir ~/.vimrc | cut -d= -f2)
 }
 
 function do_vim_plugin_install {
@@ -131,17 +131,17 @@ function do_vim_plugin_install {
 
 function do_ycm_install {
     ycm_path=~/.vim/bundle/YouCompleteMe/
-	log_msg "Running YouCompleteMe install script."
-	if ! $ycm_path/install.py --clang-completer &>> $LOG_PATH
+    log_msg "Running YouCompleteMe install script."
+    if ! $ycm_path/install.py --clang-completer &>> $LOG_PATH
     then
         log_msg "Error: YouCompleteMe installation failed."
-		exit 17
+        exit 17
     fi
-	log_msg "YouCompleteMe installation done."
+    log_msg "YouCompleteMe installation done."
 }
 
 function do_vim_colorscheme_install {
-	colorscheme_dir=~/.vim/colors
+    colorscheme_dir=~/.vim/colors
     log_msg "Installing vim color scheme."
     if ! wget --directory-prefix=$colorscheme_dir $VIM_COLORSCHEME_URL\
             &>> $LOG_PATH ; then
@@ -151,12 +151,12 @@ function do_vim_colorscheme_install {
 }
 
 function do_gdsf_install {
-	gdsf_url=https://github.com/so-fancy/diff-so-fancy
-	gdsf_dir=~/.bin/git-diff-so-fancy
-	log_msg "Installig git diff-so-fancy."
+    gdsf_url=https://github.com/so-fancy/diff-so-fancy
+    gdsf_dir=~/.bin/git-diff-so-fancy
+    log_msg "Installig git diff-so-fancy."
     if [ -d $gdsf_dir ]; then
         log_msg "Diff-so-fancy directory (\"$zshsh_dir\") already exists. Skipping."
-	return 0
+    return 0
     elif ! git clone $gdsf_url $gdsf_dir &>>$LOG_PATH; then
         log_msg "Error: diff-so-fancy downloading failed."
         exit 19
@@ -166,11 +166,11 @@ function do_gdsf_install {
 }
 
 function do_gdsf_config {
-	log_msg "Configuring git core.pager to diff-so-fancy."
-	pager_conf="$gdsf_dir/diff-so-fancy | less --tabs=4 -RFX"
-	git config --global core.pager "$pager_conf"
+    log_msg "Configuring git core.pager to diff-so-fancy."
+    pager_conf="$gdsf_dir/diff-so-fancy | less --tabs=4 -RFX"
+    git config --global core.pager "$pager_conf"
     git config --bool --global diff-so-fancy.markEmptyLines false
-	log_msg
+    log_msg
 }
 
 function do_tmux_tpm {
@@ -179,7 +179,7 @@ function do_tmux_tpm {
     tpm_dir=~/.tmux/plugins/tpm
     if [ -d $tpm_dir ]; then
         log_msg "TPM directory (\"$tpm_dir\") already exists. Skipping."
-	return 0
+    return 0
     elif ! git clone https://github.com/tmux-plugins/tpm $tpm_dir &>>$LOG_PATH; then
         log_msg "Error: TPM downloading failed." 
         exit 7
@@ -189,7 +189,7 @@ function do_tmux_tpm {
 }
 
 function do_tpm_plugin_install {
-	log_msg "Installing tmux plugins via tpm."
+    log_msg "Installing tmux plugins via tpm."
     if ! ~/.tmux/plugins/tpm/scripts/install_plugins.sh &>>$LOG_PATH; then
         log_msg "Plugin installation failed."
         exit 8
@@ -199,35 +199,36 @@ function do_tpm_plugin_install {
 }
 
 function download_dotfiles {
-	log_msg
-	dotfiles_dir=/tmp/dotfiles
+    log_msg
+    dotfiles_dir=/tmp/dotfiles
     if [ -d $dotfiles_dir ]; then
-		log_msg "Dotfiles dir (\"$dotfiles_dir\") already exists."
-		log_msg "Removing"
-		rm -rf $dotfiles_dir
-	fi
+        log_msg "Dotfiles dir (\"$dotfiles_dir\") already exists."
+        log_msg "Removing"
+        rm -rf $dotfiles_dir
+    fi
 
-	log_msg "Downloading dotfiles to \"$dotfiles_dir\"."
-	if ! git clone $DOTFILES_REPO_URL $dotfiles_dir &>> $LOG_PATH
-	then
-		log_msg "Failed to clone dotfiles repository."
-		exit 21
-	fi
+    log_msg "Downloading dotfiles to \"$dotfiles_dir\"."
+    if ! git clone $DOTFILES_REPO_URL $dotfiles_dir &>> $LOG_PATH
+    then
+        log_msg "Failed to clone dotfiles repository."
+        exit 21
+    fi
 
-	log_msg "Moving dotfiles to the home directory."
-	mv $dotfiles_dir/.i3 ~/.i3 -f &>> $LOG_PATH
-	mv $dotfiles_dir/.zshrc ~/.zshrc &>> $LOG_PATH
-	mv $dotfiles_dir/.vimrc ~/.vimrc &>> $LOG_PATH
-	mv $dotfiles_dir/.tmux.conf ~/.tmux.conf &>> $LOG_PATH
-	mv $dotfiles_dir/.git ~/.git -f &>> $LOG_PATH
-	mv $dotfiles_dir/.gitignore ~/.gitignore &>> $LOG_PATH
-	mv $dotfiles_dir/.gitconfig ~/.gitconfig &>> $LOG_PATH
-	mv $dotfiles_dir/.screenlayout ~/ -f &>> $LOG_PATH
+    log_msg "Moving dotfiles to the home directory."
+    mv $dotfiles_dir/.i3 ~/.i3 -f &>> $LOG_PATH
+    mv $dotfiles_dir/.zshrc ~/.zshrc &>> $LOG_PATH
+    mv $dotfiles_dir/.vimrc ~/.vimrc &>> $LOG_PATH
+    mv $dotfiles_dir/.tmux.conf ~/.tmux.conf &>> $LOG_PATH
+    mv $dotfiles_dir/.git ~/.git -f &>> $LOG_PATH
+    mv $dotfiles_dir/.gitignore ~/.gitignore &>> $LOG_PATH
+    mv $dotfiles_dir/.gitconfig ~/.gitconfig &>> $LOG_PATH
+    mv $dotfiles_dir/.screenlayout ~/ -f &>> $LOG_PATH
 }
 
 function do_pyenv_install {
-	log_msg "Installing pyenv"
-	wget -q -O - https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
+    log_msg "Installing pyenv"
+    wget -q -O - https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
+}
 }
 
 cd ~
