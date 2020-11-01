@@ -180,6 +180,7 @@ install_pkg dos2unix
 install_pkg cifs-utils
 install_pkg vagrant
 install_pkg pavucontrol
+install_pkg zeal
 
 # Proprietary stuff + packages supporting that
 install_pkg teams
