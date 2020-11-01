@@ -229,6 +229,16 @@ function do_pyenv_install {
     log_msg "Installing pyenv"
     wget -q -O - https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
 }
+
+function do_rofimoji_install {
+    wheel_url=$( \
+        curl -s https://api.github.com/repos/fdw/rofimoji/releases/latest \
+        | grep "browser_download_url.*whl" \
+        | cut -d : -f 2,3 \
+        | tr -d '[" ]')
+    wget -q "$wheel_url"
+    pip -q install $(basename "$wheel_url")
+    rm $(basename "$wheel_url")
 }
 
 cd ~
@@ -254,5 +264,6 @@ do_fzf_install
 do_z_install
 do_zshsh_install
 do_pyenv_install
+do_rofimoji_install
 
 cd ~; git checkout .
