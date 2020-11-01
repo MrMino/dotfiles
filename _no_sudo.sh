@@ -118,9 +118,9 @@ function do_vundle_install {
 }
 
 function do_vim_directories {
-    mkdir ~/.vim/$(grep directory ~/.vimrc | cut -d= -f2)
-    mkdir ~/.vim/$(grep backupdir ~/.vimrc | cut -d= -f2)
-    mkdir ~/.vim/$(grep undodir ~/.vimrc | cut -d= -f2)
+    mkdir $(grep directory= ~/.vimrc | cut -d= -f2)
+    mkdir $(grep backupdir= ~/.vimrc | cut -d= -f2)
+    mkdir $(grep undodir= ~/.vimrc | cut -d= -f2)
 }
 
 function do_vim_plugin_install {
