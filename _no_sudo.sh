@@ -241,6 +241,15 @@ function do_rofimoji_install {
     rm $(basename "$wheel_url")
 }
 
+function do_patched_powerline_fonts_install {
+	log_msg "Installing powerline-patched fonts."
+	git clone https://github.com/powerline/fonts.git
+	cd fonts
+	bash ./install.sh
+	cd ..
+	rm -rf fonts
+}
+
 cd ~
 
 do_oh_my_zsh
@@ -265,5 +274,6 @@ do_z_install
 do_zshsh_install
 do_pyenv_install
 do_rofimoji_install
+do_patched_powerline_fonts_install
 
 cd ~; git checkout .

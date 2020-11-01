@@ -169,6 +169,7 @@ install_pkg conky
 install_pkg compton
 install_pkg i3blocks
 install_pkg cmus
+# Only installs powerline fallback - not patched fonts
 install_pkg fonts-powerline
 install_pkg fonts-font-awesome
 install_pkg build-essential
