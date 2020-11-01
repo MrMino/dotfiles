@@ -1,7 +1,7 @@
 # (MrM) This should always be at the start of the file
 # (MrM) Uncomment this as well as the last line of this file to start zsh with startup
 # (MrM) profiler
-zmodload zsh/zprof
+#zmodload zsh/zprof
 
 # Path to your oh-my-zsh installation.
 export ZSH=~/.oh-my-zsh
