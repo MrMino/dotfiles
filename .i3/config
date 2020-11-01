@@ -9,7 +9,7 @@
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 # Set up wallpaper
-exec --no-startup-id "sleep 0.05; feh --bg-scale ~/.i3/wallpapers/mountain.jpg"
+exec_always --no-startup-id "sleep 0.05; feh --bg-scale ~/.i3/wallpapers/mountain.jpg"
 
 # Set base key to left alt.
 set $mod Mod1
@@ -202,7 +202,7 @@ bar {
 exec --no-startup-id "~/.screenlayout/default.sh"
 
 # Make capslock an additional escape key
-exec --no-startup-id "setxkbmap -option caps:escape"
+exec_always --no-startup-id "setxkbmap -option caps:escape"
 
 # Layout colors           bord    bg      text 
 client.focused            #000000 #000000 #FFA300 #4F4F4F
