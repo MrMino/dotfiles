@@ -10,7 +10,25 @@ export ZSH=~/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="agnoster"
+#ZSH_THEME="agnoster"
+#
+# Powerline go used instead - see https://github.com/justjanne/powerline-go
+function powerline_precmd() {
+    PS1="$(~/go/bin/powerline-go -hostname-only-if-ssh -ignore-repos "$HOME" -modules "venv,user,host,ssh,cwd,perms,git,hg,jobs,exit,root" -error $? -shell zsh)"
+}
+
+function install_powerline_precmd() {
+  for s in "${precmd_functions[@]}"; do
+    if [ "$s" = "powerline_precmd" ]; then
+      return
+    fi
+  done
+  precmd_functions+=(powerline_precmd)
+}
+
+if [ "$TERM" != "linux" ]; then
+    install_powerline_precmd
+fi
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
