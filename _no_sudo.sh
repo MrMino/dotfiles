@@ -87,7 +87,7 @@ function do_z_install {
     fi
 
 	# zjump complains about it the first time the shell opens
-	mkdir ~/.z
+	touch ~/.z
 }
 
 function do_zshsh_install {
