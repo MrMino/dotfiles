@@ -308,4 +308,4 @@ do_gnome_terminal_config
 
 mkdir ~/.ssh
 
-cd ~; git checkout .
+cd ~; git checkout . &>> $LOG_PATH
