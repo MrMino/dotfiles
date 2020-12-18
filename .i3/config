@@ -12,7 +12,7 @@
 exec_always --no-startup-id "sleep 0.05; feh --bg-scale ~/.i3/wallpapers/mountain.jpg"
 
 # Start clipboard manager (Clipit)
-exec_always --no-startup-id "clipit"
+exec_always --no-startup-id "pkill clipit; clipit"
 
 # Set base key to left alt.
 set $mod Mod1
