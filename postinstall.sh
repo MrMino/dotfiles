@@ -189,7 +189,7 @@ install_pkg cifs-utils
 install_pkg vagrant
 install_pkg pavucontrol
 install_pkg zeal
-install_pkg go
+install_pkg golang
 install_pkg clipit
 install_pkg flameshot
 
