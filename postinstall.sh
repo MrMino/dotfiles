@@ -130,10 +130,8 @@ function add_external_apt_keys_and_repos {
 	log_msg "Adding apt repos for proprietary apps."
 	echo "deb http://repository.spotify.com stable non-free" > /etc/apt/sources.list.d/spotify.list
 	echo "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" > /etc/apt/sources.list.d/docker-io.list
-
-	# These two seem to get autoconfigured
-	#echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google.list
-	#echo "deb https://packages.microsoft.com/repos/ms-teams stable main" > /etc/apt/sources.list.d/ms-teams.list
+	echo "deb https://packages.microsoft.com/repos/ms-teams stable main" > /etc/apt/sources.list.d/teams.list
+	echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google-chrome.list
 }
 
 function do_delta_install {
