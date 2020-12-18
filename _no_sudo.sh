@@ -287,5 +287,6 @@ do_zshsh_install
 do_pyenv_install
 do_rofimoji_install
 do_patched_powerline_fonts_install
+do_powerline_go_install
 
 cd ~; git checkout .
