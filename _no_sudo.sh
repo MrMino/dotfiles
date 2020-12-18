@@ -154,26 +154,11 @@ function do_vim_colorscheme_install {
     fi
 }
 
-function do_gdsf_install {
-    gdsf_url=https://github.com/so-fancy/diff-so-fancy
-    gdsf_dir=~/.bin/git-diff-so-fancy
-    log_msg "Installig git diff-so-fancy."
-    if [ -d $gdsf_dir ]; then
-        log_msg "Diff-so-fancy directory (\"$zshsh_dir\") already exists. Skipping."
-    return 0
-    elif ! git clone $gdsf_url $gdsf_dir &>>$LOG_PATH; then
-        log_msg "Error: diff-so-fancy downloading failed."
-        exit 19
-    else
-        log_msg "Finished downloading diff-so-fancy."
-    fi
-}
-
-function do_gdsf_config {
-    log_msg "Configuring git core.pager to diff-so-fancy."
-    pager_conf="$gdsf_dir/diff-so-fancy | less --tabs=4 -RFX"
-    git config --global core.pager "$pager_conf"
-    git config --bool --global diff-so-fancy.markEmptyLines false
+function do_delta_config {
+    log_msg "Configuring git core.pager to delta."
+    git config --global core.pager delta
+    git config --global interactive.diffFilter "delta --color-only"
+    git config --global --bool delta.line-numbers true
     log_msg
 }
 
@@ -295,8 +280,7 @@ tmux source-file ~/.tmux.conf
 do_tpm_plugin_install
 
 do_home_bin_dir
-do_gdsf_install
-do_gdsf_config
+do_delta_config
 do_fzf_install
 do_z_install
 do_zshsh_install

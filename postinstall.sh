@@ -134,6 +134,14 @@ function add_external_apt_keys_and_repos {
 	echo "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" > /etc/apt/sources.list.d/docker-io.list
 }
 
+function do_delta_install {
+	log_msg "Installing git-delta."
+	log_msg "========================= WARNING ========================"
+	log_msg "POSTINSTAL DOES NOT UPDATE GIT DELTA - v0.4.4 LINK IS USED"
+	wget -q -P /tmp/ https://github.com/dandavison/delta/releases/download/0.4.4/git-delta_0.4.4_amd64.deb
+	dpkg -i "/tmp/git-delta_0.4.4_amd64.deb" &>>$LOG_PATH
+}
+
 # Empty, chown the logs
 echo "LOGGING TO $LOG_PATH"
 echo > $LOG_PATH
