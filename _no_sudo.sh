@@ -262,7 +262,7 @@ function do_patched_powerline_fonts_install {
 }
 
 function do_powerline_go_install {
-	log_msg "Installing powerline-go fonts."
+	log_msg "Installing powerline-go."
 	go get -u github.com/justjanne/powerline-go
 }
 
