@@ -263,6 +263,15 @@ function do_powerline_go_install {
 	go get -u github.com/justjanne/powerline-go
 }
 
+function do_gnome_terminal_config {
+	log_msg "Configuring gnome-terminal."
+	dconf write /org/gnome/terminal/legacy/default-show-menubar false
+	gt_profile=$(dconf list /org/gnome/terminal/legacy/profiles:/ | sed s/.$//)
+	dconf write \
+		/org/gnome/terminal/legacy/profiles:/$gt_profile/scrollbar-policy \
+		"'never'"
+}
+
 cd ~
 
 do_oh_my_zsh
@@ -288,5 +297,6 @@ do_pyenv_install
 do_rofimoji_install
 do_patched_powerline_fonts_install
 do_powerline_go_install
+do_gnome_terminal_config
 
 cd ~; git checkout .
