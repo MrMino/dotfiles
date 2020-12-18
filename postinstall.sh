@@ -181,6 +181,7 @@ install_pkg cifs-utils
 install_pkg vagrant
 install_pkg pavucontrol
 install_pkg zeal
+install_pkg go
 
 # Proprietary stuff + packages supporting that
 install_pkg teams

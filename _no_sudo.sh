@@ -273,6 +273,11 @@ function do_patched_powerline_fonts_install {
 	rm -rf fonts
 }
 
+function do_powerline_go_install {
+	log_msg "Installing powerline-go fonts."
+	go get -u github.com/justjanne/powerline-go
+}
+
 cd ~
 
 do_oh_my_zsh
