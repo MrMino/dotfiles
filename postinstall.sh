@@ -122,7 +122,7 @@ function do_make_i3_default {
 
 function add_external_apt_keys_and_repos {
 	log_msg "Downloading & adding apt keys."
-	wget -q -O - https://download.spotify.com/debian/pubkey.gpg | sudo apt-key add -
+	wget -q -O - https://download.spotify.com/debian/pubkey_0D811D58.gpg | sudo apt-key add -
 	wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
 	wget -q -O - https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
 	wget -q -O - https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
