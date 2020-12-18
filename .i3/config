@@ -14,6 +14,9 @@ exec_always --no-startup-id "sleep 0.05; feh --bg-scale ~/.i3/wallpapers/mountai
 # Start clipboard manager (Clipit)
 exec_always --no-startup-id "pkill clipit; clipit"
 
+# Start screenshot tool (Flameshot)
+exec_always --no-startup-id "flameshot"
+
 # Set base key to left alt.
 set $mod Mod1
 
