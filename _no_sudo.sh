@@ -20,7 +20,7 @@ function do_oh_my_zsh {
     fi
 
     # Make sure we're not running something else
-    expected_md5="705b585ae28274e36a8bb359c19a8efe  -"
+    expected_md5="7280c49ba6e17216a81625c739478ae5 -"
     if [ "$(echo $oh_my_zsh_script | md5sum)" = "$expected_md5" ]
     then
         log_msg "Error: oh-my-zsh install script: wrong MD5 sum."
