@@ -303,4 +303,6 @@ do_patched_powerline_fonts_install
 do_powerline_go_install
 do_gnome_terminal_config
 
+mkdir ~/.ssh
+
 cd ~; git checkout .
