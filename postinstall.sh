@@ -148,8 +148,9 @@ echo > $LOG_PATH
 chmod -R 777 $LOG_DIR
 chown -R $SUDO_USER $LOG_DIR
 
-add_external_apt_keys_and_repos
 do_sanity_checks
+
+add_external_apt_keys_and_repos
 do_update_upgrade
 do_broadcom_card_setup
 
