@@ -139,6 +139,10 @@ bindsym $mod+Shift+e exec ~/.i3/shutdown_menu
 # Rofi menu with emojis
 bindsym $mod+backslash exec rofimoji
 
+# Screenshots with Flameshot
+bindsym Print exec "flameshot full -p /tmp --clipboard"
+bindsym Shift+Print exec "flameshot gui -p /tmp"
+
 # Resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
