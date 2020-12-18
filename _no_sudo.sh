@@ -85,6 +85,9 @@ function do_z_install {
     else
         log_msg "Finished downloading z-jump."
     fi
+
+	# zjump complains about it the first time the shell opens
+	mkdir ~/.z
 }
 
 function do_zshsh_install {
