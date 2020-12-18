@@ -183,6 +183,7 @@ install_pkg pavucontrol
 install_pkg zeal
 install_pkg go
 install_pkg clipit
+install_pkg flameshot
 
 # Proprietary stuff + packages supporting that
 install_pkg teams
