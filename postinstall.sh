@@ -214,6 +214,7 @@ install_pip3_pkg ansible
 
 
 do_make_i3_default
+do_delta_install
 
 timedatectl set-local-rtc 1 --adjust-system-clock &>> $LOG_PATH
 
