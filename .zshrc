@@ -14,7 +14,14 @@ export ZSH=~/.oh-my-zsh
 #
 # Powerline go used instead - see https://github.com/justjanne/powerline-go
 function powerline_precmd() {
-    PS1="$(~/go/bin/powerline-go -hostname-only-if-ssh -ignore-repos "$HOME" -modules "venv,user,host,ssh,cwd,perms,git,hg,jobs,exit,root" -error $? -shell zsh)"
+    PS1="$(~/go/bin/powerline-go \
+		-hostname-only-if-ssh \
+		-ignore-repos "$HOME" \
+		-modules "venv,user,host,ssh,cwd,perms,git,hg,jobs,exit,root" \
+		-max-width 100 \
+		-error $? \
+		-shell zsh \
+		)"
 }
 
 function install_powerline_precmd() {
