@@ -233,7 +233,7 @@ function do_pyenv_install {
 
     if ! sh -c "$pyenv_installation_script" &>> $LOG_PATH
     then
-        log_msg "Error: oh-my-zsh installation failed."
+        log_msg "Error: pyenv installation failed."
         exit 9
     fi
 }
