@@ -268,6 +268,9 @@ function do_powerline_go_install {
 
 function do_gnome_terminal_config {
 	log_msg "Configuring gnome-terminal."
+	# If dconf gives "connection refused", this variable is the culprit
+	export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$(id -u)/bus
+	dconf read /org/gnome/terminal/legacy/default-show-menubar
 	dconf write /org/gnome/terminal/legacy/default-show-menubar false
 	# This ID is used as the default one in gnome-terminal gschema
 	gt_profile=:b1dcc9dd-5262-4d8d-a863-c897e6d979b9
