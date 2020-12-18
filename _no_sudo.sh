@@ -266,7 +266,8 @@ function do_powerline_go_install {
 function do_gnome_terminal_config {
 	log_msg "Configuring gnome-terminal."
 	dconf write /org/gnome/terminal/legacy/default-show-menubar false
-	gt_profile=$(dconf list /org/gnome/terminal/legacy/profiles:/ | sed s/.$//)
+	# This ID is used as the default one in gnome-terminal gschema
+	gt_profile=:b1dcc9dd-5262-4d8d-a863-c897e6d979b9
 	dconf write \
 		/org/gnome/terminal/legacy/profiles:/$gt_profile/scrollbar-policy \
 		"'never'"
