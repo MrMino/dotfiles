@@ -281,6 +281,7 @@ silent! map <F2> :NERDTreeToggle<CR>
 " YouCompleteMe
 " Go to definition / declaration
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+nmap <leader>k <plug>(YCMHover)
 
 " ALE
 " Navigate between errors / warns
