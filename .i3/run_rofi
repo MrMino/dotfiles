@@ -1,0 +1,5 @@
+#!/bin/bash
+rofi -show combi -combi-modi window,run,drun \
+-lines 9 -eh 2 -width 100 -padding 345 \
+-opacity "85" -bw 0 -bc "#1A1A1A" -bg "#1A1A1A" -fg "#AAAAAA" -hlbg "#383838" \
+-hlfg "#BBBBBB" -font "FontAwesome 11"
