@@ -86,8 +86,8 @@ function do_z_install {
         log_msg "Finished downloading z-jump."
     fi
 
-	# zjump complains about it the first time the shell opens
-	touch ~/.z
+    # zjump complains about it the first time the shell opens
+    touch ~/.z
 }
 
 function do_zshsh_install {
@@ -168,7 +168,7 @@ function do_delta_config {
 function do_credential_helper_config {
     log_msg "Configuring git credential.helper to git-credential-libsecret."
     git config --global core.pager \
-	    /usr/share/doc/git/contrib/credential/libsecret/git-credential-libsecret
+        /usr/share/doc/git/contrib/credential/libsecret/git-credential-libsecret
 }
 
 function do_tmux_tpm {
@@ -259,30 +259,30 @@ function do_rofimoji_install {
 }
 
 function do_patched_powerline_fonts_install {
-	log_msg "Installing powerline-patched fonts."
-	git clone -q https://github.com/powerline/fonts.git
-	cd fonts
-	bash ./install.sh
-	cd ..
-	rm -rf fonts
+    log_msg "Installing powerline-patched fonts."
+    git clone -q https://github.com/powerline/fonts.git
+    cd fonts
+    bash ./install.sh
+    cd ..
+    rm -rf fonts
 }
 
 function do_powerline_go_install {
-	log_msg "Installing powerline-go."
-	go get -u github.com/justjanne/powerline-go
+    log_msg "Installing powerline-go."
+    go get -u github.com/justjanne/powerline-go
 }
 
 function do_gnome_terminal_config {
-	log_msg "Configuring gnome-terminal."
-	# If dconf gives "connection refused", this variable is the culprit
-	export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$(id -u)/bus
-	dconf read /org/gnome/terminal/legacy/default-show-menubar
-	dconf write /org/gnome/terminal/legacy/default-show-menubar false
-	# This ID is used as the default one in gnome-terminal gschema
-	gt_profile=:b1dcc9dd-5262-4d8d-a863-c897e6d979b9
-	dconf write \
-		/org/gnome/terminal/legacy/profiles:/$gt_profile/scrollbar-policy \
-		"'never'"
+    log_msg "Configuring gnome-terminal."
+    # If dconf gives "connection refused", this variable is the culprit
+    export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$(id -u)/bus
+    dconf read /org/gnome/terminal/legacy/default-show-menubar
+    dconf write /org/gnome/terminal/legacy/default-show-menubar false
+    # This ID is used as the default one in gnome-terminal gschema
+    gt_profile=:b1dcc9dd-5262-4d8d-a863-c897e6d979b9
+    dconf write \
+        /org/gnome/terminal/legacy/profiles:/$gt_profile/scrollbar-policy \
+        "'never'"
 }
 
 cd ~

@@ -101,7 +101,7 @@ function do_tmux_chsh {
     tmux_path=$(which tmux)
     if [[ $tmux_path != /usr/bin/tmux ]]; then
         log_msg "Error: tmux is not in \"/usr/bin/tmux\""
-	exit 3
+    exit 3
     fi
 
     log_msg "Changing the default shell of $current_user to \"$tmux_path\"."
@@ -112,7 +112,7 @@ function do_make_i3_default {
     log_msg "Making i3wm the default session manager."
     session_file=/var/lib/AccountsService/users/$SUDO_USER
 
-	if [ ! -f $session_file ]; then
+    if [ ! -f $session_file ]; then
         log_msg "Error: session file not found."
         exit 20
     fi
@@ -121,31 +121,31 @@ function do_make_i3_default {
 }
 
 function add_external_apt_keys_and_repos {
-	log_msg "Downloading & adding apt keys."
-	wget -q -O - https://download.spotify.com/debian/pubkey_0D811D58.gpg | sudo apt-key add -
-	wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-	wget -q -O - https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
-	wget -q -O - https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+    log_msg "Downloading & adding apt keys."
+    wget -q -O - https://download.spotify.com/debian/pubkey_0D811D58.gpg | sudo apt-key add -
+    wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+    wget -q -O - https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
+    wget -q -O - https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 
-	log_msg "Adding apt repos for proprietary apps."
-	echo "deb http://repository.spotify.com stable non-free" > /etc/apt/sources.list.d/spotify.list
-	echo "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" > /etc/apt/sources.list.d/docker-io.list
-	echo "deb https://packages.microsoft.com/repos/ms-teams stable main" > /etc/apt/sources.list.d/teams.list
-	echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google-chrome.list
+    log_msg "Adding apt repos for proprietary apps."
+    echo "deb http://repository.spotify.com stable non-free" > /etc/apt/sources.list.d/spotify.list
+    echo "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" > /etc/apt/sources.list.d/docker-io.list
+    echo "deb https://packages.microsoft.com/repos/ms-teams stable main" > /etc/apt/sources.list.d/teams.list
+    echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google-chrome.list
 }
 
 function do_delta_install {
-	log_msg "Installing git-delta."
-	log_msg "========================= WARNING ========================"
-	log_msg "POSTINSTAL DOES NOT UPDATE GIT DELTA - v0.4.4 LINK IS USED"
-	wget -q -P /tmp/ https://github.com/dandavison/delta/releases/download/0.4.4/git-delta_0.4.4_amd64.deb
-	dpkg -i "/tmp/git-delta_0.4.4_amd64.deb" &>>$LOG_PATH
+    log_msg "Installing git-delta."
+    log_msg "========================= WARNING ========================"
+    log_msg "POSTINSTAL DOES NOT UPDATE GIT DELTA - v0.4.4 LINK IS USED"
+    wget -q -P /tmp/ https://github.com/dandavison/delta/releases/download/0.4.4/git-delta_0.4.4_amd64.deb
+    dpkg -i "/tmp/git-delta_0.4.4_amd64.deb" &>>$LOG_PATH
 }
 
 function do_libsecret_credential_helper_install {
-	log_msg "Compiling libsecret git credential helper"
-	cd /usr/share/doc/git/contrib/credential/libsecret
-	sudo make
+    log_msg "Compiling libsecret git credential helper"
+    cd /usr/share/doc/git/contrib/credential/libsecret
+    sudo make
 }
 
 # Empty, chown the logs
