@@ -176,6 +176,7 @@ install_pkg feh
 install_pkg conky
 install_pkg compton
 install_pkg i3blocks
+install_pkg ncdu
 # Only installs powerline fallback - not patched fonts
 install_pkg fonts-powerline
 install_pkg fonts-font-awesome
