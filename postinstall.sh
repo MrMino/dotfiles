@@ -142,6 +142,12 @@ function do_delta_install {
 	dpkg -i "/tmp/git-delta_0.4.4_amd64.deb" &>>$LOG_PATH
 }
 
+function do_libsecret_credential_helper_install {
+	log_msg "Compiling libsecret git credential helper"
+	cd /usr/share/doc/git/contrib/credential/libsecret
+	sudo make
+}
+
 # Empty, chown the logs
 echo "LOGGING TO $LOG_PATH"
 echo > $LOG_PATH
@@ -194,6 +200,10 @@ install_pkg golang
 install_pkg clipit
 install_pkg flameshot
 
+# Required for libsecret git credentials helper
+install_pkg libsecret-1-0
+install_pkg libsecret-1-dev
+
 # Proprietary stuff + packages supporting that
 install_pkg teams
 install_pkg spotify-client
@@ -214,6 +224,7 @@ install_pip3_pkg ansible
 
 do_make_i3_default
 do_delta_install
+do_libsecret_credential_helper_install
 
 timedatectl set-local-rtc 1 --adjust-system-clock &>> $LOG_PATH
 

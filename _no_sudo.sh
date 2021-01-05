@@ -165,6 +165,12 @@ function do_delta_config {
     log_msg
 }
 
+function do_credential_helper_config {
+    log_msg "Configuring git credential.helper to git-credential-libsecret."
+    git config --global core.pager \
+	    /usr/share/doc/git/contrib/credential/libsecret/git-credential-libsecret
+}
+
 function do_tmux_tpm {
     log_msg
     log_msg "Installing tmux plugin manager (TPM)."
@@ -297,6 +303,7 @@ do_tpm_plugin_install
 
 do_home_bin_dir
 do_delta_config
+do_credential_helper_config 
 do_fzf_install
 do_z_install
 do_zshsh_install
