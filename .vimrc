@@ -305,7 +305,7 @@ noremap <F6> :Codi!! python<CR>
 nnoremap <F7> :MundoToggle<CR>
 
 " Tagbar
-noremap <F8> :TagbarOpenAutoClose<CR>
+noremap <F8> :TagbarToggle<CR>
 
 
 """""""""""""""""""""""""
