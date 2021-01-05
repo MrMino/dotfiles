@@ -199,6 +199,7 @@ install_pkg zeal
 install_pkg golang
 install_pkg clipit
 install_pkg flameshot
+install_pkg ripgrep
 
 # Required for libsecret git credentials helper
 install_pkg libsecret-1-0
