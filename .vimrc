@@ -23,7 +23,6 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'kien/ctrlp.vim'
 Plugin 'vim-scripts/indentpython.vim'
-Plugin 'tmhedberg/SimpylFold'
 Plugin 'chrisbra/Recover.vim'
 Plugin 'AndrewRadev/sideways.vim'
 Plugin 'justinmk/vim-syntax-extra'
@@ -73,6 +72,8 @@ filetype plugin indent on
 " Plugin 'fatih/vim-go'
 " Plugin 'JuliaEditorSupport/julia-vim'
 
+" Makes basic operations slow in large files. See SimpylFold#122
+" Plugin 'tmhedberg/SimpylFold'
 
 """"""""""""""""""""""
 """ Basic behavior """
