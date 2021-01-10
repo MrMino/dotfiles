@@ -222,6 +222,7 @@ install_pip3_pkg flake8
 install_pip3_pkg pygments
 install_pip3_pkg powerline-status
 install_pip3_pkg ansible
+install_pip3_pkg mypy
 
 
 do_make_i3_default
