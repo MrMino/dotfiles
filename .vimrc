@@ -384,3 +384,6 @@ endif
 " Show warning when using 'U'
 :nnoremap U :echohl Error \| echo " <== C H E C K   C A P S   L O C K ==>"<CR>\
 			:echohl Normal
+
+" Do not select newline character - prevents clobbering next line on pasting
+:set selection=exclusive
