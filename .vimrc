@@ -125,6 +125,13 @@ set undodir=~/.vim/undofiles
 " Make mouse mode work under tmux
 set ttymouse=xterm2
 
+" Persistent folds
+augroup AutoSaveFolds
+  autocmd!
+  autocmd BufWinLeave * mkview
+  autocmd BufWinEnter * silent loadview
+augroup END
+
 
 """""""""""""""""""
 " Plugin behavior "
