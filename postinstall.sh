@@ -223,6 +223,7 @@ install_pip3_pkg pygments
 install_pip3_pkg powerline-status
 install_pip3_pkg ansible
 install_pip3_pkg mypy
+install_pip3_pkg pre-commit
 
 
 do_make_i3_default
