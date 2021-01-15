@@ -214,6 +214,13 @@ if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
 
+# Fast test output window setup
+alias pyentr="find . -name '*.py' | entr"
+function pyte {
+    tmux split-window -h "find . -iname '*.py' | entr -c pytest"
+    tmux split-window "find . -iname '*.py' | entr -c mypy $1"
+}
+
 # (MrM) This should be always at the end.
 # (MrM) Uncomment this as well as the first line in this file to use startup 
 # (MrM) profiler
