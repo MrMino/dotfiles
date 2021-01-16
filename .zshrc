@@ -215,11 +215,11 @@ if command -v pyenv 1>/dev/null 2>&1; then
 fi
 
 # Fast test output window setup
-alias pyentr="find . -name '*.py' | entr"
+alias pyentr="find . -name '*.py' | entr -cn"
 function pyte {
     breakpoint="PYTHONBREAKPOINT=ipdb.set_trace"
-    tmux split-window -e $breakpoint -h "find . -iname '*.py' | entr -c pytest -s"
-    tmux split-window "find . -iname '*.py' | entr -c mypy $1"
+    tmux split-window -e $breakpoint -h "find . -iname '*.py' | entr -cn pytest -s"
+    tmux split-window "find . -iname '*.py' | entr -cn mypy $1"
 }
 
 # (MrM) This should be always at the end.
