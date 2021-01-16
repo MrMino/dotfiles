@@ -219,7 +219,7 @@ alias pyentr="find . -name '*.py' | entr -cn"
 function pyte {
     breakpoint="PYTHONBREAKPOINT=pdb.set_trace"
     tmux split-window -e $breakpoint -h "find . -iname '*.py' | entr -c pytest -s"
-    tmux split-window "find . -iname '*.py' | entr -cn mypy $1"
+    tmux split-window "find . -iname '*.py' | entr -cn mypy **/*.py"
 }
 
 # (MrM) This should be always at the end.
