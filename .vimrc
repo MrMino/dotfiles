@@ -386,4 +386,10 @@ endif
 			:echohl Normal
 
 " Do not select newline character - prevents clobbering next line on pasting
-:set selection=exclusive
+"
+" Do not use this one. It makes vim exclude character under the cursor from
+" selection.
+" :set selection=exclusive
+"
+" Maybe use this one instead?
+" :set selection=old
