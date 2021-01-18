@@ -1,0 +1,3 @@
+This file ensures that vim-gutentags will not try to generate tags for ~/.
+
+See https://github.com/ludovicchabant/vim-gutentags/blob/master/doc/gutentags.txt.
