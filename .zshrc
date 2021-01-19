@@ -217,7 +217,7 @@ fi
 # Fast test output window setup
 alias pyentr="find . -name '*.py' | entr -cn"
 function pyte {
-    breakpoint="PYTHONBREAKPOINT=pdb.set_trace"
+    breakpoint="PYTHONBREAKPOINT=ipdb.sset_trace"
     tmux split-window -e $breakpoint -h "find . -iname '*.py' | entr -c pytest -s"
     tmux split-window "find . -iname '*.py' | entr -cn mypy **/*.py"
 }
