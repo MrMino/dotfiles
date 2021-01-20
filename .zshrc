@@ -88,7 +88,7 @@ plugins=(git tmux tmuxinator pip)
 setopt INC_APPEND_HISTORY
 
 # Path
-export PATH=$PATH:"/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
+export PATH=$PATH:"/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/mrmino/.bin"
 
 source $ZSH/oh-my-zsh.sh
 
