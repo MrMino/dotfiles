@@ -38,7 +38,6 @@ Plugin 'Chiel92/vim-autoformat'
 Plugin 'metakirby5/codi.vim'
 Plugin 'simnalamburt/vim-mundo'
 Plugin 'preservim/tagbar'
-Plugin 'ludovicchabant/vim-gutentags'
 
 
 " All of your Plugins must be added before the following lines
@@ -74,6 +73,10 @@ filetype plugin indent on
 
 " Makes basic operations slow in large files. See SimpylFold#122
 " Plugin 'tmhedberg/SimpylFold'
+
+" Blatant disregard for large repositories
+" Makes PC freeze when running vim in a large repo
+" Plugin 'ludovicchabant/vim-gutentags'
 
 """"""""""""""""""""""
 """ Basic behavior """
