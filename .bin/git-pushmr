@@ -1,0 +1,13 @@
+if [ $# -gt 1 ]; then
+    echo "Usage: git pushmr [<merge-request-title>]"
+    exit 1
+fi
+
+if [ $# -eq 0 ]; then
+    git push --set-upstream origin $(git branch --show-current) \
+            -o merge_request.create
+else
+    git push --set-upstream origin $(git branch --show-current) \
+            -o merge_request.create \
+            -o merge_request.title="$1"
+fi
