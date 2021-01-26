@@ -119,16 +119,7 @@ export SSH_AUTH_SOCK=/run/user/$(id -u)/keyring/ssh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias nokiavpn="
-    cd ~/certs
-    sudo openconnect -v \
-	     -u blazej.michalik@nokia.com \
-		 -k michalik.ipa.nsn-net.net.key \
-		 -c michalik.ipa.nsn-net.net.crt \
-		 --no-proxy \
-		 nra-emea-fi-esp-vip.net.nokia.com
-	popd
-"
+alias nokiavpn="i3-msg \"exec ~/.bin/vpn\""
 alias show_proxy="env | grep -i _proxy"
 alias unproxy="unset \$(show_proxy | cut -d= -f1)"
 alias proxify="

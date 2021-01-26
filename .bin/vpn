@@ -1,0 +1,11 @@
+#!/bin/bash
+
+cd ~/certs
+
+gnome-terminal --title="VPN" -- \
+sudo openconnect -v \
+	 -u blazej.michalik@nokia.com \
+	 -k michalik.ipa.nsn-net.net.key \
+	 -c michalik.ipa.nsn-net.net.crt \
+	 --no-proxy \
+	 nra-emea-fi-esp-vip.net.nokia.com
