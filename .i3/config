@@ -27,6 +27,8 @@ for_window [class="Spotify"] move scratchpad
 
 # Set base key to left alt.
 set $mod Mod1
+# Set right alt for readability of modifiers
+set $altgr Mod5
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -140,9 +142,9 @@ bindsym $mod+Shift+equal move scratchpad
 bindsym $mod+equal scratchpad show
 
 # Scratchpad stuff
-bindsym $mod+F12 [title="IPython: .*"] scratchpad show
-bindsym $mod+F11 [class="Spotify"] scratchpad show
-bindsym $mod+F9  [title="VPN"] scratchpad show
+bindsym $altgr+F12 [title="IPython: .*"] scratchpad show
+bindsym $altgr+F11 [class="Spotify"] scratchpad show
+bindsym $altgr+F9  [title="VPN"] scratchpad show
 
 # Reload the configuration file
 bindsym $mod+Shift+c reload
