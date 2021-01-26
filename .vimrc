@@ -369,7 +369,8 @@ au BufWrite *.c,*.h
     \ :Autoformat
 
 " Find trailing whitespaces 
-au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+au BufRead,BufNewFile *.py,*.pyw,*.c,*.h
+    \ match BadWhitespace /\s\+$/
 
 
 """""""""""""""""""""""""
