@@ -89,7 +89,9 @@ set nocompatible
 set encoding=utf-8
 
 " Powerline for vim (managed by pip)
+python3 import sys; sys.path.append('/usr/local/lib/python3.8/dist-packages')
 python3 from powerline.vim import setup as powerline_setup
+python3 sys.path.pop(-1)
 python3 powerline_setup()
 python3 del powerline_setup
 
