@@ -190,6 +190,7 @@ alias pcat='pygmentize -O style=monokai -f terminal -g'
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/
+export VIRTUALENVWRAPPER_WORKON_CD=no
 source /usr/local/bin/virtualenvwrapper_lazy.sh
 
 # ZSH syntax highliting - keep this always at the end (before zprof)
