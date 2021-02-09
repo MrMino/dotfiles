@@ -3,7 +3,7 @@
 
 # But not these files...
 !*.vimrc
-!*.vim
+!*.vim/
 !*.zshrc
 !*.tmux.conf
 !bin/
