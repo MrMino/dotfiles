@@ -18,12 +18,9 @@ exec_always --no-startup-id "pkill clipit; clipit"
 # Start screenshot tool (Flameshot)
 exec_always --no-startup-id "flameshot"
 
-# Start Quake-style IPython in scratchpad (see for_window below)
-exec_always "gnome-terminal -- /bin/bash -c 'while true; do ipython; done'"
-
 # Move these windows to scratchpad
-for_window [title="IPython: .*"] move scratchpad
 for_window [class="Spotify"] move scratchpad
+for_window [title="VPN"] move scratchpad
 
 # Set base key to left alt.
 set $mod Mod1
@@ -142,8 +139,7 @@ bindsym $mod+Shift+equal move scratchpad
 bindsym $mod+equal scratchpad show
 
 # Scratchpad stuff
-bindsym $altgr+F12 [title="IPython: .*"] scratchpad show
-bindsym $altgr+F11 [class="Spotify"] scratchpad show
+bindsym $altgr+F12 [class="Spotify"] scratchpad show
 bindsym $altgr+F9  [title="VPN"] scratchpad show
 
 # Reload the configuration file
