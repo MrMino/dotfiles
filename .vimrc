@@ -38,6 +38,7 @@ Plugin 'Chiel92/vim-autoformat'
 Plugin 'metakirby5/codi.vim'
 Plugin 'simnalamburt/vim-mundo'
 Plugin 'preservim/tagbar'
+Plugin 'pangloss/vim-javascript'
 
 
 " All of your Plugins must be added before the following lines
