@@ -123,9 +123,9 @@ alias nokiavpn="i3-msg \"exec ~/.bin/vpn\""
 alias show_proxy="env | grep -i _proxy"
 alias unproxy="unset \$(show_proxy | cut -d= -f1)"
 alias proxify="
-export ftp_proxy=http://10.144.1.10:8080/
-export http_proxy=http://10.144.1.10:8080/
-export https_proxy=http://10.144.1.10:8080/
+export ftp_proxy=http://10.158.100.2:8080/
+export http_proxy=http://10.158.100.2:8080/
+export https_proxy=http://10.158.100.2:8080/
 
 export no_proxy=\
 localhost,127.0.0.0/8,*.local,\
