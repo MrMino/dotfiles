@@ -248,3 +248,6 @@ exec --no-startup-id "sleep 1; conky -c ~/.i3/Gotham-widget"
 
 # Rice up the desktop with compton
 exec --no-startup-id "compton -D 5 -f -b"
+
+# Android Studio fixes
+for_window [class="jetbrains-studio" title="^win\d+$"] focus
