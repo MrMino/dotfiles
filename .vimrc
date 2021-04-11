@@ -39,6 +39,7 @@ Plugin 'metakirby5/codi.vim'
 Plugin 'simnalamburt/vim-mundo'
 Plugin 'preservim/tagbar'
 Plugin 'pangloss/vim-javascript'
+Plugin 'fatih/vim-go'
 
 
 " All of your Plugins must be added before the following lines
@@ -69,7 +70,6 @@ filetype plugin indent on
 
 " Not using these languages right now
 " Plugin 'mxw/vim-prolog'
-" Plugin 'fatih/vim-go'
 " Plugin 'JuliaEditorSupport/julia-vim'
 
 " Makes basic operations slow in large files. See SimpylFold#122
