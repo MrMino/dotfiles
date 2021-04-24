@@ -165,6 +165,7 @@ install_pkg python2-dev
 install_pkg python3-dev
 do_pip_upgrade
 
+install_pkg mc
 install_pkg git
 install_pkg curl
 install_pkg vim-gtk3
