@@ -8,5 +8,6 @@ sudo openconnect -v \
 	 -k michalik.ipa.nsn-net.net.key \
 	 -c michalik.ipa.nsn-net.net.crt \
 	 --no-proxy \
+	 --disable-ipv6 \
      cloudnra-fra-emea.net.nokia.com/EE-Linux
 	 #nra-emea-fi-esp-vip.net.nokia.com
