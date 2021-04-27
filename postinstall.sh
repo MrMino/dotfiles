@@ -148,6 +148,14 @@ function do_libsecret_credential_helper_install {
     sudo make
 }
 
+function do_lf_install_from_source {
+	DIR=$(mktemp -d)
+	cd $DIR
+	git clone "https://github.com/gokcehan/lf" .
+	go install
+	cd -
+}
+
 # Empty, chown the logs
 echo "LOGGING TO $LOG_PATH"
 echo > $LOG_PATH
@@ -164,7 +172,6 @@ install_pkg python3-pip
 install_pkg python2-dev
 install_pkg python3-dev
 do_pip_upgrade
-
 
 install_pkg git
 install_pkg curl
@@ -230,6 +237,8 @@ install_pip3_pkg pre-commit
 do_make_i3_default
 do_delta_install
 do_libsecret_credential_helper_install
+
+do_lf_install_from_source
 
 timedatectl set-local-rtc 1 --adjust-system-clock &>> $LOG_PATH
 
