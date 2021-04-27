@@ -167,7 +167,7 @@ function do_delta_config {
 
 function do_credential_helper_config {
     log_msg "Configuring git credential.helper to git-credential-libsecret."
-    git config --global core.pager \
+    git config --global core.credentials-helper \
         /usr/share/doc/git/contrib/credential/libsecret/git-credential-libsecret
 }
 
