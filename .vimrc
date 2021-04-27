@@ -346,7 +346,7 @@ set shiftwidth=4 |
 """ Per-filetype preferences """
 """"""""""""""""""""""""""""""""
 
-au BufNewFile,BufRead *.adb,*.ads,*.js,*.html,*.css,*.robot,*.py,*.c,*.jl,*.groovy,*.json,*.md
+au BufNewFile,BufRead *.adb,*.ads,*.js,*.html,*.css,*.robot,*.py,*.c,*.jl,*.groovy,*.json,*.md,*.sh
     \ set expandtab |
     \ set autoindent
 
