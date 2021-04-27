@@ -146,6 +146,7 @@ function do_libsecret_credential_helper_install {
     log_msg "Compiling libsecret git credential helper"
     cd /usr/share/doc/git/contrib/credential/libsecret
     sudo make
+	cd -
 }
 
 function do_lf_install_from_source {
