@@ -71,25 +71,6 @@ function do_fzf_install {
     log_msg "Plugin installation done."
 }
 
-function do_z_install {
-    z_dir=~/.bin/z
-    z_url=https://github.com/rupa/z
-
-    log_msg "Installing z-jump (Z)."
-    if [ -d $z_dir ]; then
-        log_msg "Z directory (\"$z_dir\") already exists. Skipping."
-        return 0
-    elif ! git clone $z_url $z_dir &>>$LOG_PATH; then
-        log_msg "Error: Z downloading failed." 
-        exit 15
-    else
-        log_msg "Finished downloading z-jump."
-    fi
-
-    # zjump complains about it the first time the shell opens
-    touch ~/.z
-}
-
 function do_zshsh_install {
     zshsh_url=https://github.com/zsh-users/zsh-syntax-highlighting.git
     zshsh_dir=~/.bin/zsh-syntax-highlighting
@@ -305,7 +286,6 @@ do_home_bin_dir
 do_delta_config
 do_credential_helper_config 
 do_fzf_install
-do_z_install
 do_zshsh_install
 do_pyenv_install
 do_rofimoji_install
