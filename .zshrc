@@ -162,10 +162,6 @@ SCRIPT_BIN=~/.bin
 # Fuzzy finder initialization.
 source $SCRIPT_BIN/fzf.zsh
 
-# Initialize Z (https://github.com/rupa/z) 
-source $SCRIPT_BIN/z/z.sh
-# autoload z
-
 # Calculator
 '='(){
     calc="$@"
