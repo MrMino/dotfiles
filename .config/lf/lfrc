@@ -4,10 +4,9 @@ set shellopts '-eu'
 set ifs "\n"
 
 cmd open ${{
-    case $(file --mime-type "$f" -bL) in
-        text/*|application/json) $EDITOR "$f";;
-        video/*|image/*/application/pdf) xdg-open "$f" & disown;;
-        *) xdg-open "$f";;
+    case $(file --mime-type $f -b) in
+        text/*) $EDITOR $fx;;
+        *) for f in $fx; do setsid $OPENER $f > /dev/null 2> /dev/null & done;;
     esac
 }}
 
