@@ -29,6 +29,15 @@ function install_pip3_pkg {
     log_msg ". Done."
 }
 
+function install_snap_pkg {
+    log_msg -n "Installing (via snap) \"$1\".."
+    if ! snap install $@ &>> $LOG_PATH; then
+        log_msg "Error: snap install failed."
+        exit 9
+    fi
+    log_msg ". Done."
+}
+
 function do_update_upgrade {
     log_msg "Running update/upgrade"
     apt update --yes &>> $LOG_PATH
