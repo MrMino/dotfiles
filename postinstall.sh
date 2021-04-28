@@ -29,15 +29,6 @@ function install_pip3_pkg {
     log_msg ". Done."
 }
 
-function install_snap_pkg {
-    log_msg -n "Installing (via snap) \"$1\".."
-    if ! snap install $@ &>> $LOG_PATH; then
-        log_msg "Error: snap install failed."
-        exit 9
-    fi
-    log_msg ". Done."
-}
-
 function do_update_upgrade {
     log_msg "Running update/upgrade"
     apt update --yes &>> $LOG_PATH
@@ -242,9 +233,6 @@ install_pip3_pkg powerline-status
 install_pip3_pkg ansible
 install_pip3_pkg mypy
 install_pip3_pkg pre-commit
-
-install_snap_pkg fasd --beta
-
 
 do_make_i3_default
 do_delta_install
