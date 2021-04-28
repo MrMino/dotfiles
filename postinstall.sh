@@ -243,6 +243,8 @@ install_pip3_pkg ansible
 install_pip3_pkg mypy
 install_pip3_pkg pre-commit
 
+install_snap_pkg fasd --beta
+
 
 do_make_i3_default
 do_delta_install
