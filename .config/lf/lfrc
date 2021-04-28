@@ -1,4 +1,7 @@
 set ratios 1:2:3
+set scrolloff 10
+set shellopts '-eu'
+set ifs "\n"
 
 cmd open ${{
     case $(file --mime-type "$f" -bL) in
