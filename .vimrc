@@ -39,6 +39,7 @@ Plugin 'metakirby5/codi.vim'
 Plugin 'simnalamburt/vim-mundo'
 Plugin 'preservim/tagbar'
 Plugin 'pangloss/vim-javascript'
+Plugin 'fatih/vim-go'
 
 
 " All of your Plugins must be added before the following lines
@@ -77,9 +78,6 @@ filetype plugin indent on
 " Blatant disregard for large repositories
 " Makes PC freeze when running vim in a large repo
 " Plugin 'ludovicchabant/vim-gutentags'
-
-" Borks the source code on :w
-" Plugin 'fatih/vim-go'
 
 """"""""""""""""""""""
 """ Basic behavior """
