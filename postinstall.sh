@@ -212,9 +212,10 @@ install_pkg flameshot
 install_pkg ripgrep
 install_pkg universal-ctags
 
-# Required for libsecret git credentials helper
+# Required for libsecret git credentials helper and scripts that use secret-tool
 install_pkg libsecret-1-0
 install_pkg libsecret-1-dev
+install_pkg libsecret-tools
 
 # Proprietary stuff + packages supporting that
 install_pkg teams
