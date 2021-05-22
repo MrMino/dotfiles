@@ -1,0 +1,56 @@
+#!/bin/bash
+
+isOnLockscreen(){
+    adb shell dumpsys window | rg -o "mDreamingLockscreen=(false|true)" | cut -d '=' -f 2
+}
+
+INSTANCE_LOCK="/tmp/adb-unlocker-script-single-instance.lock"
+
+exec 200>$INSTANCE_LOCK
+
+# Do not run while another instance is running
+if ! flock -n 200; then
+	echo "Another instance of this script is already running - aborting."
+	exit 1
+fi
+
+display=$(adb shell dumpsys power | rg -o "Display Power: state=(ON|OFF)" | cut -d'=' -f 2)
+if [ "$display" = "OFF" ]; then
+    echo "Display is off - waking up..."
+    adb shell input keyevent POWER  # Wake up
+    echo Display on...
+else
+    echo "Display is on - going to sleep..."
+    adb shell input keyevent POWER  # Sleep
+    echo "Done."
+    exit 0
+fi
+
+onLockScreen=$(isOnLockscreen)
+if [ $onLockScreen = "false" ]; then
+    echo "Already unlocked."
+    exit 0;
+fi
+
+onLockScreen=$(isOnLockscreen)
+if [ $onLockScreen = "true" ]; then
+    echo "On lockscreen, swiping to unlock..."
+    adb shell input touchscreen swipe 930 880 930 380  # Show the keypad / unlock
+fi 
+
+onLockScreen=$(isOnLockscreen)
+if [ $onLockScreen = "true" ]; then
+    echo "Device locked - atempting unlock..."
+    
+    adb shell input text 19731
+    adb shell input keyevent KEYCODE_ENTER
+    sleep 1
+fi
+
+onLockScreen=$(isOnLockscreen)
+if [ $onLockScreen = "false" ]; then
+    echo "Unlocked."
+else
+    echo "Unlocking failed."
+    exit 1
+fi
