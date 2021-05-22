@@ -143,6 +143,9 @@ bindsym $mod+equal scratchpad show
 bindsym $altgr+F12 [class="Spotify"] scratchpad show
 bindsym $altgr+F9  [title="VPN"] scratchpad show
 
+# Overhead tablet shortcuts
+bindsym $mod+Escape exec ~/.bin/adblock
+
 # Reload the configuration file
 bindsym $mod+Shift+c reload
 # Restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
