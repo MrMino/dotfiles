@@ -153,6 +153,8 @@ source /etc/zsh_command_not_found
 # Usage: somecommand | ctrlc
 alias ctrlc='xclip -selection c'
 
+# Alias for ~/.bin/git-vim
+alias gv='git vim'
 
 # Path to directory where scripts reside
 SCRIPT_BIN=~/.bin
