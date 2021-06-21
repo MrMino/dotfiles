@@ -211,6 +211,7 @@ install_pkg clipit
 install_pkg flameshot
 install_pkg ripgrep
 install_pkg universal-ctags
+install_pkg exa
 
 # Required for libsecret git credentials helper and scripts that use secret-tool
 install_pkg libsecret-1-0
