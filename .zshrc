@@ -211,6 +211,9 @@ function pyte {
     tmux split-window "find . -iname '*.py' | entr -cn mypy **/*.py"
 }
 
+# Exa is better than ls
+alias ls=exa
+
 # (MrM) This should be always at the end.
 # (MrM) Uncomment this as well as the first line in this file to use startup 
 # (MrM) profiler
