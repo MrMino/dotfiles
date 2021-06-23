@@ -35,7 +35,6 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-commentary'
 Plugin 'inkarkat/vim-ReplaceWithRegister'
 Plugin 'Chiel92/vim-autoformat'
-Plugin 'metakirby5/codi.vim'
 Plugin 'simnalamburt/vim-mundo'
 Plugin 'preservim/tagbar'
 Plugin 'pangloss/vim-javascript'
@@ -78,6 +77,12 @@ filetype plugin indent on
 " Blatant disregard for large repositories
 " Makes PC freeze when running vim in a large repo
 " Plugin 'ludovicchabant/vim-gutentags'
+
+" Maybe cool, but wasn't really useful
+" If you misclick it in a *.adb, it has a nasty habit of permanently marking
+" these non-python files as python to Ale, which makes the linters light up
+" like a christmass tree.
+" Plugin 'metakirby5/codi.vim'
 
 """"""""""""""""""""""
 """ Basic behavior """
@@ -314,9 +319,6 @@ noremap <F4> :Autoformat<CR>
 " Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsExpandTrigger="<F5>"
 let g:UltiSnipsJumpForwardTrigger="<c-s>"
-
-" Codi
-noremap <F6> :Codi!! python<CR>
 
 " Mundo (undo tree)
 nnoremap <F7> :MundoToggle<CR>
