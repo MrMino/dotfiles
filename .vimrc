@@ -39,6 +39,7 @@ Plugin 'simnalamburt/vim-mundo'
 Plugin 'preservim/tagbar'
 Plugin 'pangloss/vim-javascript'
 Plugin 'junegunn/goyo.vim'
+Plugin 'fatih/vim-go'   " Third time's the charm?
 
 
 " All of your Plugins must be added before the following lines
@@ -194,6 +195,21 @@ let g:ctrlp_working_path_mode = 'rw'
 " Tagbar
 " Open on the left side
 let g:tagbar_position = 'botright vertical'
+
+" Vim-go (stolen from dev.to/jogendra/)
+" Go syntax highlighting
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_function_calls = 1
+let g:go_highlight_extra_types = 1
+let g:go_highlight_operators = 1
+
+" Auto formatting and importing
+let g:go_fmt_autosave = 1
+let g:go_fmt_command = "goimports"
+
+" Status line types/signatures
+let g:go_auto_type_info = 1
 
 
 """"""""""""""""""
