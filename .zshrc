@@ -90,6 +90,9 @@ setopt INC_APPEND_HISTORY
 # Path
 export PATH=$PATH:"/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/mrmino/.bin"
 
+# ZSH Function Path
+fpath=(~/.zsh.d/ $fpath)
+
 source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
