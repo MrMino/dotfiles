@@ -47,6 +47,12 @@ function do_home_bin_dir {
     mkdir ~/.bin &>> $LOG_PATH
 }
 
+function do_home_zshd_dir {
+    log_msg
+    log_msg "Creating \"~/.zsh.d\" directory."
+    mkdir ~/.zsh.d &>> $LOG_PATH
+}
+
 function do_fzf_install {
     fzf_dir=~/.bin/fzf
     fzf_url=https://github.com/junegunn/fzf.git
@@ -266,6 +272,12 @@ function do_gnome_terminal_config {
         "'never'"
 }
 
+function do_cht_sh_install {
+    curl https://cht.sh/:cht.sh > ~/.bin/cht.sh 2>> $LOG_PATH
+    chmod +x ~/.bin/cht.sh
+    curl https://cheat.sh/:zsh > ~/.zsh.d/_ch 2>> $LOG_PATH
+}
+
 cd ~
 
 do_oh_my_zsh
@@ -283,6 +295,7 @@ tmux source-file ~/.tmux.conf
 do_tpm_plugin_install
 
 do_home_bin_dir
+do_home_zshd_dir
 do_delta_config
 do_credential_helper_config 
 do_fzf_install
@@ -292,6 +305,7 @@ do_rofimoji_install
 do_patched_powerline_fonts_install
 do_powerline_go_install
 do_gnome_terminal_config
+do_cht_sh_install
 
 mkdir ~/.ssh
 
