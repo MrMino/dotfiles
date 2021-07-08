@@ -40,6 +40,7 @@ Plugin 'preservim/tagbar'
 Plugin 'pangloss/vim-javascript'
 Plugin 'junegunn/goyo.vim'
 Plugin 'fatih/vim-go'   " Third time's the charm?
+Plugin 'preservim/vimx'
 
 
 " All of your Plugins must be added before the following lines
