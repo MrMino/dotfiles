@@ -1,4 +1,4 @@
 # Global ignore file for ripgrep (and possibly others)
 # The line below states, that ~/.gitignore '*' rule should not be applied
 # to ripgrep searches
-!./*
+!*
